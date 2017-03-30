@@ -48,6 +48,8 @@ $cakeDescription = 'Virtuelles Museum';
                 <li><a href="Medien">Medien</a></li>
             </ul> 
             <ul class="right">
+                <li><?php echo $this->Form->input(null, array('label' => false, "class" => " form-control input-medium", "placeholder" => __('Suche'), 'id' => 'search'));?></li>
+                <li><?= $this->Form->button(__('Search'), array('onclick' => "location.href='/VirtuellesMuseum-Grp3/search'+document.getElementById('search').value;"));?></li>
                 <li><a href="Users">Anmelden</a></li>
             </ul>
         </div>

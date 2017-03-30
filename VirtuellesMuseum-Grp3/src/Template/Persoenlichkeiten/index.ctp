@@ -6,7 +6,8 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Persoenlichkeiten'), ['action' => 'add']) ?></li>
+        <li><a href="PersoenlichkeitenHasEpochen">Abh&auml;ngigkeiten zu Epochen anzeigen</a></li>
+        <li><a href="PersoenlichkeitenHasKategorien">Abh&auml;ngigkeiten zu Kategorien anzeigen</a></li>
     </ul>
 </nav>
 <div class="persoenlichkeiten index large-9 medium-8 columns content">

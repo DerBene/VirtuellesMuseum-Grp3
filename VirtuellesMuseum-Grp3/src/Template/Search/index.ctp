@@ -6,7 +6,7 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><a href="EpochenHasKategorien">Abh&auml;ngigkeiten anzeigen</a></li>
+        <li><a href="search">Durchsuchen</a></li>
     </ul>
 </nav>
 <div class="epochen index large-9 medium-8 columns content">

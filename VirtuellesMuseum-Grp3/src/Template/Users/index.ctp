@@ -7,6 +7,11 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Persoenlichkeiten'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Geographisch'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Kategorien'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Epochen'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Medien'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
