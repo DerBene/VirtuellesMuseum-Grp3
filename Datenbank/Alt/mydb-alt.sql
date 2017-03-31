@@ -3,11 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 31. Mrz 2017 um 14:34
+-- Erstellungszeit: 29. Mrz 2017 um 20:48
 -- Server-Version: 10.1.21-MariaDB
 -- PHP-Version: 7.1.1
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -37,6 +36,10 @@ CREATE TABLE `epochen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- RELATIONEN DER TABELLE `epochen`:
+--
+
+--
 -- Daten für Tabelle `epochen`
 --
 
@@ -55,6 +58,14 @@ CREATE TABLE `epochen_has_kategorien` (
   `Epochen_E_ID` int(11) NOT NULL,
   `Kategorien_Kat_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- RELATIONEN DER TABELLE `epochen_has_kategorien`:
+--   `Epochen_E_ID`
+--       `epochen` -> `E_ID`
+--   `Kategorien_Kat_ID`
+--       `kategorien` -> `Kat_ID`
+--
 
 --
 -- Daten für Tabelle `epochen_has_kategorien`
@@ -78,6 +89,10 @@ CREATE TABLE `geographisch` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- RELATIONEN DER TABELLE `geographisch`:
+--
+
+--
 -- Daten für Tabelle `geographisch`
 --
 
@@ -98,6 +113,10 @@ CREATE TABLE `kategorien` (
   `Unterkategorie` varchar(45) DEFAULT NULL,
   `Beschreibung` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- RELATIONEN DER TABELLE `kategorien`:
+--
 
 --
 -- Daten für Tabelle `kategorien`
@@ -124,6 +143,12 @@ CREATE TABLE `medien` (
   `Persönlichkeiten_Pers_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- RELATIONEN DER TABELLE `medien`:
+--   `Persönlichkeiten_Pers_ID`
+--       `persoenlichkeiten` -> `Pers_ID`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -140,6 +165,10 @@ CREATE TABLE `persoenlichkeiten` (
   `BiografischeDaten` varchar(150) DEFAULT NULL,
   `Freischaltung` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- RELATIONEN DER TABELLE `persoenlichkeiten`:
+--
 
 --
 -- Daten für Tabelle `persoenlichkeiten`
@@ -162,6 +191,14 @@ CREATE TABLE `persoenlichkeiten_has_epochen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
+-- RELATIONEN DER TABELLE `persoenlichkeiten_has_epochen`:
+--   `Epochen_E_ID`
+--       `epochen` -> `E_ID`
+--   `Persoenlichkeiten_Pers_ID`
+--       `persoenlichkeiten` -> `Pers_ID`
+--
+
+--
 -- Daten für Tabelle `persoenlichkeiten_has_epochen`
 --
 
@@ -179,6 +216,14 @@ CREATE TABLE `persoenlichkeiten_has_kategorien` (
   `Persoenlichkeiten_Pers_ID` int(11) NOT NULL,
   `Kategorien_Kat_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- RELATIONEN DER TABELLE `persoenlichkeiten_has_kategorien`:
+--   `Kategorien_Kat_ID`
+--       `kategorien` -> `Kat_ID`
+--   `Persoenlichkeiten_Pers_ID`
+--       `persoenlichkeiten` -> `Pers_ID`
+--
 
 --
 -- Daten für Tabelle `persoenlichkeiten_has_kategorien`
@@ -203,6 +248,10 @@ CREATE TABLE `phinxlog` (
   `breakpoint` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- RELATIONEN DER TABELLE `phinxlog`:
+--
+
 -- --------------------------------------------------------
 
 --
@@ -219,6 +268,10 @@ CREATE TABLE `users` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- RELATIONEN DER TABELLE `users`:
+--
 
 --
 -- Daten für Tabelle `users`
@@ -245,6 +298,12 @@ CREATE TABLE `werke` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- RELATIONEN DER TABELLE `werke`:
+--   `Geographisch_Graph_ID`
+--       `geographisch` -> `Graph_ID`
+--
+
+--
 -- Daten für Tabelle `werke`
 --
 
@@ -262,6 +321,14 @@ CREATE TABLE `werke_has_persoenlichkeiten` (
   `Werke_Werk_ID` int(11) NOT NULL,
   `Persoenlichkeiten_Pers_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- RELATIONEN DER TABELLE `werke_has_persoenlichkeiten`:
+--   `Persoenlichkeiten_Pers_ID`
+--       `persoenlichkeiten` -> `Pers_ID`
+--   `Werke_Werk_ID`
+--       `werke` -> `Werk_ID`
+--
 
 --
 -- Daten für Tabelle `werke_has_persoenlichkeiten`
@@ -439,7 +506,6 @@ ALTER TABLE `werke`
 ALTER TABLE `werke_has_persoenlichkeiten`
   ADD CONSTRAINT `fk_Werke_has_Persönlichkeiten_Persönlichkeiten1` FOREIGN KEY (`Persoenlichkeiten_Pers_ID`) REFERENCES `persoenlichkeiten` (`Pers_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Werke_has_Persönlichkeiten_Werke1` FOREIGN KEY (`Werke_Werk_ID`) REFERENCES `werke` (`Werk_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
