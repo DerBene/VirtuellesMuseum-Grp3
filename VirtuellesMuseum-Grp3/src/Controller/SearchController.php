@@ -24,6 +24,10 @@ class SearchController extends AppController
 
         $this->set(compact('search'));
         $this->set('_serialize', ['search']);
+        
+        $searchvalue = $this->request->getData();
+        $this->set(compact('searchvalue'));
+        $this->set('_serialize', ['searchvalue']);
     }
 
     /**

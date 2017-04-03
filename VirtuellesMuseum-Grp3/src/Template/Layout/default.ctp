@@ -41,16 +41,20 @@ $cakeDescription = 'Virtuelles Museum';
         </ul>
         <div class="top-bar-section"> 
             <ul>
-                <li><a href="Kategorien">Kategorien</a></li>
-                <li><a href="Epochen">Epochen</a></li>
-                <li><a href="Geographisch">Geographisch</a></li>
-                <li><a href="Persoenlichkeiten">Pers&ouml;nlichkeiten</a></li>
-                <li><a href="Medien">Medien</a></li>
+                <li><a href="/VirtuellesMuseum-Grp3/Kategorien">Kategorien</a></li>
+                <li><a href="/VirtuellesMuseum-Grp3/Epochen">Epochen</a></li>
+                <li><a href="/VirtuellesMuseum-Grp3/Geographisch">Geographisch</a></li>
+                <li><a href="/VirtuellesMuseum-Grp3/Persoenlichkeiten">Pers&ouml;nlichkeiten</a></li>
+                <li><a href="/VirtuellesMuseum-Grp3/Medien">Medien</a></li>
             </ul> 
             <ul class="right">
-                <li><?php echo $this->Form->input(null, array('label' => false, "class" => " form-control input-medium", "placeholder" => __('Suche'), 'id' => 'search'));?></li>
-                <li><?= $this->Form->button(__('Search'), array('onclick' => "location.href='/VirtuellesMuseum-Grp3/search'+document.getElementById('search').value;"));?></li>
                 <li><a href="Users">Anmelden</a></li>
+            </ul>
+            <ul class="right">
+                <?php echo $this->Form->create('Search', array('type' => 'post', 'url' => '/Search'));?>
+                <li><?php echo $this->Form->input('Search.searchvalue', array('label' => false, "placeholder" => __('Suche')));?></li>
+                <li><?php echo $this->Form->button(__('Suche'));?></li>
+                <?php echo $this->Form->end(); ?>
             </ul>
         </div>
     </nav>
