@@ -46,5 +46,10 @@ class SearchController extends AppController
         $this->set('epochen', $epochen);
         $this->set('_serialize', ['epochen']);
     }
+    
+    public function search()
+    {
+        //paginate search
+    }
 
 }
