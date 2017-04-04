@@ -20,6 +20,7 @@
     <fieldset>
         <legend><?= __('Edit Werke') ?></legend>
         <?php
+            echo $this->Form->control('Titel');
             echo $this->Form->control('Typ');
             echo $this->Form->control('Dateipfad');
             echo $this->Form->control('Urheber');

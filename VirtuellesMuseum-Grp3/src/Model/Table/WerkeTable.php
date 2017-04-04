@@ -45,7 +45,12 @@ class WerkeTable extends Table
     {
         $validator
             ->integer('Werk_ID')
-            ->allowEmpty('Werk_ID', 'create');
+            ->requirePresence('Werk_ID', 'create')
+            ->notEmpty('Werk_ID');
+
+        $validator
+            ->requirePresence('Titel', 'create')
+            ->notEmpty('Titel');
 
         $validator
             ->allowEmpty('Typ');
@@ -65,7 +70,8 @@ class WerkeTable extends Table
 
         $validator
             ->integer('Geographisch_Graph_ID')
-            ->allowEmpty('Geographisch_Graph_ID', 'create');
+            ->requirePresence('Geographisch_Graph_ID', 'create')
+            ->notEmpty('Geographisch_Graph_ID');
 
         return $validator;
     }

@@ -46,6 +46,7 @@ $cakeDescription = 'Virtuelles Museum';
                 <li><a href="/VirtuellesMuseum-Grp3/Geographisch">Geographisch</a></li>
                 <li><a href="/VirtuellesMuseum-Grp3/Persoenlichkeiten">Pers&ouml;nlichkeiten</a></li>
                 <li><a href="/VirtuellesMuseum-Grp3/Medien">Medien</a></li>
+                <li><a href="/VirtuellesMuseum-Grp3/Werke">Werke</a></li>
             </ul> 
             <ul class="right">
                 <li><a href="Users">Anmelden</a></li>

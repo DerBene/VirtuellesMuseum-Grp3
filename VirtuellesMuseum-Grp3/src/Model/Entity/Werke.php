@@ -7,6 +7,7 @@ use Cake\ORM\Entity;
  * Werke Entity
  *
  * @property int $Werk_ID
+ * @property string $Titel
  * @property string $Typ
  * @property string $Dateipfad
  * @property string $Urheber
