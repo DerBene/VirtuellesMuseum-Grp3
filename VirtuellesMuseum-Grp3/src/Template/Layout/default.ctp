@@ -49,7 +49,7 @@ $cakeDescription = 'Virtuelles Museum';
                 <li><a href="/VirtuellesMuseum-Grp3/Werke">Werke</a></li>
             </ul> 
             <ul class="right">
-                <li><a href="Users">Anmelden</a></li>
+                <li><a href="/VirtuellesMuseum-Grp3/Users">Admin</a></li>
             </ul>
             <ul class="right">
                 <?php echo $this->Form->create('Search', array('type' => 'post', 'url' => '/Search'));?>

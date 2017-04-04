@@ -7,12 +7,13 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('New Persoenlichkeiten'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('New Geographisch'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('New Kategorien'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('New Epochen'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('New Medien'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('New Werke'), ['action' => 'add']) ?></li>
+        <li><a href="/VirtuellesMuseum-Grp3/Kategorien/add">New Kategorien</a></li>
+        <li><a href="/VirtuellesMuseum-Grp3/Epochen/add">New Epochen</a></li>
+        <li><a href="/VirtuellesMuseum-Grp3/Geographisch/add">New Geographisch</a></li>
+        <li><a href="/VirtuellesMuseum-Grp3/Persoenlichkeiten/add">New Pers&ouml;nlichkeiten</a></li>
+        <li><a href="/VirtuellesMuseum-Grp3/Medien/add">New Medien</a></li>
+        <li><a href="/VirtuellesMuseum-Grp3/Werke/add">New Werke</a></li>
+        <li><a href="/VirtuellesMuseum-Grp3/Users/logout">Abmelden</a></li>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
