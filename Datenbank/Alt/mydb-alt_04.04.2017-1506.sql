@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 04. Apr 2017 um 15:05
+-- Erstellungszeit: 31. Mrz 2017 um 20:38
 -- Server-Version: 10.1.21-MariaDB
 -- PHP-Version: 7.1.1
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `mydb`
 --
-CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `mydb`;
 
 -- --------------------------------------------------------
 
@@ -28,7 +26,6 @@ USE `mydb`;
 -- Tabellenstruktur für Tabelle `epochen`
 --
 
-DROP TABLE IF EXISTS `epochen`;
 CREATE TABLE `epochen` (
   `E_ID` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -55,7 +52,6 @@ INSERT INTO `epochen` (`E_ID`, `name`, `Start`, `Ende`) VALUES
 -- Tabellenstruktur für Tabelle `epochen_has_kategorien`
 --
 
-DROP TABLE IF EXISTS `epochen_has_kategorien`;
 CREATE TABLE `epochen_has_kategorien` (
   `Epochen_E_ID` int(11) NOT NULL,
   `Kategorien_Kat_ID` int(11) NOT NULL
@@ -86,7 +82,6 @@ INSERT INTO `epochen_has_kategorien` (`Epochen_E_ID`, `Kategorien_Kat_ID`) VALUE
 -- Tabellenstruktur für Tabelle `geographisch`
 --
 
-DROP TABLE IF EXISTS `geographisch`;
 CREATE TABLE `geographisch` (
   `Graph_ID` int(11) NOT NULL,
   `Beschreibung` varchar(45) DEFAULT NULL,
@@ -109,7 +104,6 @@ INSERT INTO `geographisch` (`Graph_ID`, `Beschreibung`, `Ort`, `Land`) VALUES
 -- Tabellenstruktur für Tabelle `kategorien`
 --
 
-DROP TABLE IF EXISTS `kategorien`;
 CREATE TABLE `kategorien` (
   `Kat_ID` int(11) NOT NULL,
   `Name` varchar(45) DEFAULT NULL,
@@ -134,7 +128,6 @@ INSERT INTO `kategorien` (`Kat_ID`, `Name`, `Unterkategorie`, `Beschreibung`) VA
 -- Tabellenstruktur für Tabelle `medien`
 --
 
-DROP TABLE IF EXISTS `medien`;
 CREATE TABLE `medien` (
   `Med_ID` int(11) NOT NULL,
   `Typ` varchar(45) DEFAULT NULL,
@@ -142,14 +135,14 @@ CREATE TABLE `medien` (
   `Urheber` varchar(45) DEFAULT NULL,
   `Erscheinungsdatum` varchar(45) DEFAULT NULL,
   `Freischaltung` tinyint(1) DEFAULT NULL,
-  `Persoenlichkeiten_Pers_ID` int(11) NOT NULL
+  `Persönlichkeiten_Pers_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `medien`
 --
 
-INSERT INTO `medien` (`Med_ID`, `Typ`, `Dateipfad`, `Urheber`, `Erscheinungsdatum`, `Freischaltung`, `Persoenlichkeiten_Pers_ID`) VALUES
+INSERT INTO `medien` (`Med_ID`, `Typ`, `Dateipfad`, `Urheber`, `Erscheinungsdatum`, `Freischaltung`, `Persönlichkeiten_Pers_ID`) VALUES
 (1, 'Bild, jpg', '\\img\\ruth_cohn\\cohn_kb_26_18x24.jpg', 'Walter Schels', '08.04.2010', 1, 1),
 (2, 'Bild, jpg', '\\img\\ruth_cohn\\KB_Frontal_lachend.jpg', '/', '/', 1, 1),
 (3, 'Bild, png', '\\img\\ruth_cohn\\Ruth_Cohn_Plakat.png', '/', '/', 1, 1),
@@ -165,7 +158,6 @@ INSERT INTO `medien` (`Med_ID`, `Typ`, `Dateipfad`, `Urheber`, `Erscheinungsdatu
 -- Tabellenstruktur für Tabelle `persoenlichkeiten`
 --
 
-DROP TABLE IF EXISTS `persoenlichkeiten`;
 CREATE TABLE `persoenlichkeiten` (
   `Pers_ID` int(11) NOT NULL,
   `Name` varchar(45) DEFAULT NULL,
@@ -192,7 +184,6 @@ INSERT INTO `persoenlichkeiten` (`Pers_ID`, `Name`, `Kurzbeschreibung`, `Zitat`,
 -- Tabellenstruktur für Tabelle `persoenlichkeiten_has_epochen`
 --
 
-DROP TABLE IF EXISTS `persoenlichkeiten_has_epochen`;
 CREATE TABLE `persoenlichkeiten_has_epochen` (
   `Persoenlichkeiten_Pers_ID` int(11) NOT NULL,
   `Epochen_E_ID` int(11) NOT NULL
@@ -218,7 +209,6 @@ INSERT INTO `persoenlichkeiten_has_epochen` (`Persoenlichkeiten_Pers_ID`, `Epoch
 -- Tabellenstruktur für Tabelle `persoenlichkeiten_has_kategorien`
 --
 
-DROP TABLE IF EXISTS `persoenlichkeiten_has_kategorien`;
 CREATE TABLE `persoenlichkeiten_has_kategorien` (
   `Persoenlichkeiten_Pers_ID` int(11) NOT NULL,
   `Kategorien_Kat_ID` int(11) NOT NULL
@@ -246,7 +236,6 @@ INSERT INTO `persoenlichkeiten_has_kategorien` (`Persoenlichkeiten_Pers_ID`, `Ka
 -- Tabellenstruktur für Tabelle `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `username` varchar(50) DEFAULT NULL,
@@ -270,7 +259,6 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `email`, `created`, `
 -- Tabellenstruktur für Tabelle `werke`
 --
 
-DROP TABLE IF EXISTS `werke`;
 CREATE TABLE `werke` (
   `Werk_ID` int(11) NOT NULL,
   `Titel` varchar(100) NOT NULL,
@@ -301,7 +289,6 @@ INSERT INTO `werke` (`Werk_ID`, `Titel`, `Typ`, `Dateipfad`, `Urheber`, `Erschei
 -- Tabellenstruktur für Tabelle `werke_has_persoenlichkeiten`
 --
 
-DROP TABLE IF EXISTS `werke_has_persoenlichkeiten`;
 CREATE TABLE `werke_has_persoenlichkeiten` (
   `Werke_Werk_ID` int(11) NOT NULL,
   `Persoenlichkeiten_Pers_ID` int(11) NOT NULL
@@ -354,8 +341,8 @@ ALTER TABLE `kategorien`
 -- Indizes für die Tabelle `medien`
 --
 ALTER TABLE `medien`
-  ADD PRIMARY KEY (`Med_ID`,`Persoenlichkeiten_Pers_ID`),
-  ADD KEY `fk_Medien_Persönlichkeiten1_idx` (`Persoenlichkeiten_Pers_ID`);
+  ADD PRIMARY KEY (`Med_ID`,`Persönlichkeiten_Pers_ID`),
+  ADD KEY `fk_Medien_Persönlichkeiten1_idx` (`Persönlichkeiten_Pers_ID`);
 
 --
 -- Indizes für die Tabelle `persoenlichkeiten`
@@ -399,7 +386,7 @@ ALTER TABLE `werke`
 -- AUTO_INCREMENT für Tabelle `epochen`
 --
 ALTER TABLE `epochen`
-  MODIFY `E_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `E_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT für Tabelle `geographisch`
 --
@@ -409,7 +396,7 @@ ALTER TABLE `geographisch`
 -- AUTO_INCREMENT für Tabelle `kategorien`
 --
 ALTER TABLE `kategorien`
-  MODIFY `Kat_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Kat_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT für Tabelle `medien`
 --
@@ -429,7 +416,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `werke`
 --
 ALTER TABLE `werke`
-  MODIFY `Werk_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Werk_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
