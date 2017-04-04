@@ -12,6 +12,7 @@
         <li><?= $this->Html->link(__('New Kategorien'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('New Epochen'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('New Medien'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Werke'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">

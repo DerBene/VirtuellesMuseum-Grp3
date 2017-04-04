@@ -16,6 +16,10 @@
     <h3><?= h($werke->Werk_ID) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Titel') ?></th>
+            <td><?= h($werke->Titel) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Typ') ?></th>
             <td><?= h($werke->Typ) ?></td>
         </tr>
