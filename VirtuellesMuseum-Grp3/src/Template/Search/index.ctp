@@ -32,7 +32,7 @@
                 <td><?= h($epochen->Start) ?></td>
                 <td><?= h($epochen->Ende) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $epochen->E_ID]) ?>
+                    <a href="/VirtuellesMuseum-Grp3/Epochen/view/<?php echo $epochen->E_ID; ?>">View</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -65,7 +65,7 @@
                 <td><?= h($kategorien->Unterkategorie) ?></td>
                 <td><?= h($kategorien->Beschreibung) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $kategorien->Kat_ID]) ?>
+                    <a href="/VirtuellesMuseum-Grp3/Kategorien/view/<?php echo $kategorien->Kat_ID; ?>">View</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -104,7 +104,7 @@
                 <td><?= h($persoenlichkeiten->BiografischeDaten) ?></td>
                 <td><?= h($persoenlichkeiten->Freischaltung) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $persoenlichkeiten->Pers_ID]) ?>
+                    <a href="/VirtuellesMuseum-Grp3/Persoenlichkeiten/view/<?php echo $persoenlichkeiten->Pers_ID; ?>">View</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -137,7 +137,7 @@
                 <td><?= h($geographisch->Ort) ?></td>
                 <td><?= h($geographisch->Land) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $geographisch->Graph_ID]) ?>
+                    <a href="/VirtuellesMuseum-Grp3/Geographisch/view/<?php echo $geographisch->Graph_ID; ?>">View</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -176,7 +176,7 @@
                 <td><?= h($medien->Freischaltung) ?></td>
                 <td><?= $this->Number->format($medien->Persoenlichkeiten_Pers_ID) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $medien->Med_ID]) ?>
+                    <a href="/VirtuellesMuseum-Grp3/Medien/view/<?php echo $medien->Med_ID; ?>">View</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -217,7 +217,7 @@
                 <td><?= h($werke->Freischaltung) ?></td>
                 <td><?= $this->Number->format($werke->Geographisch_Graph_ID) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $werke->Werk_ID]) ?>
+                    <a href="/VirtuellesMuseum-Grp3/Werke/view/<?php echo $werke->Werk_ID; ?>">View</a>
                 </td>
             </tr>
             <?php endforeach; ?>

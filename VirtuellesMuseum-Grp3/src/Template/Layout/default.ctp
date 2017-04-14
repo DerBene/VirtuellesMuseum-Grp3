@@ -41,6 +41,7 @@ $cakeDescription = 'Virtuelles Museum';
         </ul>
         <div class="top-bar-section"> 
             <ul>
+                <li><a href="/VirtuellesMuseum-Grp3/Austellung">Austellung</a></li>
                 <li><a href="/VirtuellesMuseum-Grp3/Kategorien">Kategorien</a></li>
                 <li><a href="/VirtuellesMuseum-Grp3/Epochen">Epochen</a></li>
                 <li><a href="/VirtuellesMuseum-Grp3/Geographisch">Geographisch</a></li>
@@ -63,7 +64,8 @@ $cakeDescription = 'Virtuelles Museum';
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
-    <footer>
+    <footer style="background-color: #308e97;">
+        <center><a style="color: #FFFFFF;" href="/VirtuellesMuseum-Grp3/Search/impressum">Impressum</a></center>
     </footer>
 </body>
 </html>

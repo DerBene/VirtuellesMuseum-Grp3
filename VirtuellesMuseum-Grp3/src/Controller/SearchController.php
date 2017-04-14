@@ -48,6 +48,11 @@ class SearchController extends AppController
         //template
     }
     
+    public function impressum($id = null)
+    {
+        //platzhalter
+    }
+    
     public function search($searchvalue)
     {
         $this->paginate = array(

@@ -45,8 +45,7 @@ class WerkeTable extends Table
     {
         $validator
             ->integer('Werk_ID')
-            ->requirePresence('Werk_ID', 'create')
-            ->notEmpty('Werk_ID');
+            ->allowEmpty('Werk_ID', 'create');
 
         $validator
             ->requirePresence('Titel', 'create')
