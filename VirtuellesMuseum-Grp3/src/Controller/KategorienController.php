@@ -19,6 +19,16 @@ class KategorienController extends AppController
     public function index()
     {
         $kategorien = $this->paginate($this->Kategorien);
+		$loginvalue = $this->request->session()->read('Auth.User.username');
+		
+		if(is_null($loginvalue))
+		{
+			$login = false;
+		}else{
+			$login = true;
+		}
+		$this->set(compact('login'));
+		$this->set('_serialize', ['login']);
 
         $this->set(compact('kategorien'));
         $this->set('_serialize', ['kategorien']);
