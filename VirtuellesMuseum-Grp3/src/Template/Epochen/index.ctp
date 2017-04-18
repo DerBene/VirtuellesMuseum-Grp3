@@ -17,7 +17,11 @@
                 <th scope="col"><?= $this->Paginator->sort('E_ID') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Start') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Ende') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <?php if ($login == true): ?>
+				<th scope="col" class="actions"><?= __('Actions') ?></th>
+				<?php else: ?>
+				
+				<?php endif; ?>
             </tr>
         </thead>
         <tbody>
@@ -26,11 +30,16 @@
                 <td><?= $this->Number->format($epochen->E_ID) ?></td>
                 <td><?= h($epochen->Start) ?></td>
                 <td><?= h($epochen->Ende) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $epochen->E_ID]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $epochen->E_ID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $epochen->E_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $epochen->E_ID)]) ?>
-                </td>
+				
+				<?php if ($login == true): ?>
+					<td class="actions">
+						<?= $this->Html->link(__('View'), ['action' => 'view', $epochen->E_ID]) ?>
+						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $epochen->E_ID]) ?>
+						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $epochen->E_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $epochen->E_ID)]) ?>
+					</td>
+				<?php else: ?>
+				
+				<?php endif; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>

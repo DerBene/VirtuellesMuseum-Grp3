@@ -22,7 +22,11 @@
                 <th scope="col"><?= $this->Paginator->sort('LangerText') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('BiografischeDaten') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Freischaltung') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <?php if ($login == true): ?>
+				<th scope="col" class="actions"><?= __('Actions') ?></th>
+				<?php else: ?>
+				
+				<?php endif; ?>
             </tr>
         </thead>
         <tbody>
@@ -35,11 +39,16 @@
                 <td><?= h($persoenlichkeiten->LangerText) ?></td>
                 <td><?= h($persoenlichkeiten->BiografischeDaten) ?></td>
                 <td><?= h($persoenlichkeiten->Freischaltung) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $persoenlichkeiten->Pers_ID]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $persoenlichkeiten->Pers_ID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $persoenlichkeiten->Pers_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $persoenlichkeiten->Pers_ID)]) ?>
-                </td>
+				
+				<?php if ($login == true): ?>
+					<td class="actions">
+						<?= $this->Html->link(__('View'), ['action' => 'view', $persoenlichkeiten->Pers_ID]) ?>
+						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $persoenlichkeiten->Pers_ID]) ?>
+						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $persoenlichkeiten->Pers_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $persoenlichkeiten->Pers_ID)]) ?>
+					</td>
+				<?php else: ?>
+				
+				<?php endif; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>

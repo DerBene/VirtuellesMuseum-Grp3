@@ -19,6 +19,16 @@ class PersoenlichkeitenController extends AppController
     public function index()
     {
         $persoenlichkeiten = $this->paginate($this->Persoenlichkeiten);
+		$loginvalue = $this->request->session()->read('Auth.User.username');
+		
+		if(is_null($loginvalue))
+		{
+			$login = false;
+		}else{
+			$login = true;
+		}
+		$this->set(compact('login'));
+		$this->set('_serialize', ['login']);
 
         $this->set(compact('persoenlichkeiten'));
         $this->set('_serialize', ['persoenlichkeiten']);

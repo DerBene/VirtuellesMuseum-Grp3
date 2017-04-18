@@ -19,6 +19,16 @@ class EpochenController extends AppController
     public function index()
     {
         $epochen = $this->paginate($this->Epochen);
+		$loginvalue = $this->request->session()->read('Auth.User.username');
+		
+		if(is_null($loginvalue))
+		{
+			$login = false;
+		}else{
+			$login = true;
+		}
+		$this->set(compact('login'));
+		$this->set('_serialize', ['login']);
 
         $this->set(compact('epochen'));
         $this->set('_serialize', ['epochen']);

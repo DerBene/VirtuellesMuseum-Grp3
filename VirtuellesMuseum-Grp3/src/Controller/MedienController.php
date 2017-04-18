@@ -19,6 +19,16 @@ class MedienController extends AppController
     public function index()
     {
         $medien = $this->paginate($this->Medien);
+		$loginvalue = $this->request->session()->read('Auth.User.username');
+		
+		if(is_null($loginvalue))
+		{
+			$login = false;
+		}else{
+			$login = true;
+		}
+		$this->set(compact('login'));
+		$this->set('_serialize', ['login']);
 
         $this->set(compact('medien'));
         $this->set('_serialize', ['medien']);

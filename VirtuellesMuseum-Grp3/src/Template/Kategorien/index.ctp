@@ -12,7 +12,11 @@
                 <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Unterkategorie') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Beschreibung') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <?php if ($login == true): ?>
+				<th scope="col" class="actions"><?= __('Actions') ?></th>
+				<?php else: ?>
+				
+				<?php endif; ?>
             </tr>
         </thead>
         <tbody>
@@ -22,11 +26,16 @@
                 <td><?= h($kategorien->Name) ?></td>
                 <td><?= h($kategorien->Unterkategorie) ?></td>
                 <td><?= h($kategorien->Beschreibung) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $kategorien->Kat_ID]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $kategorien->Kat_ID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $kategorien->Kat_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $kategorien->Kat_ID)]) ?>
-                </td>
+				
+				<?php if ($login == true): ?>
+					<td class="actions">
+						<?= $this->Html->link(__('View'), ['action' => 'view', $kategorien->Kat_ID]) ?>
+						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $kategorien->Kat_ID]) ?>
+						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $kategorien->Kat_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $kategorien->Kat_ID)]) ?>
+					</td>
+				<?php else: ?>
+				
+				<?php endif; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>

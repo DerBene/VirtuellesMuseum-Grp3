@@ -19,7 +19,17 @@ class WerkeController extends AppController
     public function index()
     {
         $werke = $this->paginate($this->Werke);
+		$loginvalue = $this->request->session()->read('Auth.User.username');
 
+		if(is_null($loginvalue))
+		{
+			$login = false;
+		}else{
+			$login = true;
+		}
+		$this->set(compact('login'));
+		$this->set('_serialize', ['login']);
+		
         $this->set(compact('werke'));
         $this->set('_serialize', ['werke']);
     }
