@@ -41,6 +41,7 @@ $cakeDescription = 'Virtuelles Museum';
         </ul>
         <div class="top-bar-section"> 
             <ul>
+<<<<<<< HEAD
                 <li><a href="/VirtuellesMuseum-Grp3/Ausstellung">Austellung</a></li>
                 <li><a href="/VirtuellesMuseum-Grp3/Kategorien">Kategorien</a></li>
                 <li><a href="/VirtuellesMuseum-Grp3/Epochen">Epochen</a></li>
