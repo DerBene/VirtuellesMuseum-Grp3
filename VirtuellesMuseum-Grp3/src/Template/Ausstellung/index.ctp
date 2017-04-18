@@ -4,11 +4,7 @@
   */
 ?>
 <div class="content">
-<h2><?= __('Suchergebnisse') ?></h2>
-<?php if($suche == false): ?>
-    <h3>Keine Suchergebnisse!</h3>
-<?php elseif($suche == true): ?>
-    <h3>Suche nach: <?php echo $searchvalue['Search']['searchvalue']; ?></h3>
+<h2><?= __('Aktuelle Ausstellung') ?></h2>
 
 <div class="epochen index columns content">
 <?php if(sizeof($epochen) == 0): ?>
@@ -224,6 +220,5 @@
         </tbody>
     </table>
     </div>
-<?php endif; ?>
 <?php endif; ?>
 </div>

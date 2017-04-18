@@ -6,10 +6,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Persoenlichkeiten'), ['action' => 'edit', $persoenlichkeiten->Pers_ID]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Persoenlichkeiten'), ['action' => 'delete', $persoenlichkeiten->Pers_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $persoenlichkeiten->Pers_ID)]) ?> </li>
         <li><?= $this->Html->link(__('List Persoenlichkeiten'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Persoenlichkeiten'), ['action' => 'add']) ?> </li>
+        <li><a href="PersoenlichkeitenHasEpochen">Abh&auml;ngigkeiten zu Epochen anzeigen</a></li>
+        <li><a href="PersoenlichkeitenHasKategorien">Abh&auml;ngigkeiten zu Kategorien anzeigen</a></li>
     </ul>
 </nav>
 <div class="persoenlichkeiten view large-9 medium-8 columns content">

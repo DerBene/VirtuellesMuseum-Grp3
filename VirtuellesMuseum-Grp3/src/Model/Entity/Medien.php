@@ -29,6 +29,6 @@ class Medien extends Entity
     protected $_accessible = [
         '*' => true,
         'Med_ID' => false,
-        'Persönlichkeiten_Pers_ID' => false
+        //'Persönlichkeiten_Pers_ID' => false
     ];
 }

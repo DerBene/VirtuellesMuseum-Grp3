@@ -32,7 +32,7 @@ class MedienTable extends Table
 
         $this->setTable('medien');
         $this->setDisplayField('Med_ID');
-        $this->setPrimaryKey(['Med_ID', 'Persönlichkeiten_Pers_ID']);
+        $this->setPrimaryKey(['Med_ID']);        //'Persönlichkeiten_Pers_ID'
     }
 
     /**

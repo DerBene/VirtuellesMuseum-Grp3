@@ -30,6 +30,6 @@ class Werke extends Entity
     protected $_accessible = [
         '*' => true,
         'Werk_ID' => false,
-        'Geographisch_Graph_ID' => false
+        //'Geographisch_Graph_ID' => false
     ];
 }

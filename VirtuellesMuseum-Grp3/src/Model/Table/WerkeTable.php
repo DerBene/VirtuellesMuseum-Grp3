@@ -32,7 +32,7 @@ class WerkeTable extends Table
 
         $this->setTable('werke');
         $this->setDisplayField('Werk_ID');
-        $this->setPrimaryKey(['Werk_ID', 'Geographisch_Graph_ID']);
+        $this->setPrimaryKey(['Werk_ID']);          //'Geographisch_Graph_ID'
     }
 
     /**
@@ -45,8 +45,7 @@ class WerkeTable extends Table
     {
         $validator
             ->integer('Werk_ID')
-            ->requirePresence('Werk_ID', 'create')
-            ->notEmpty('Werk_ID');
+            ->allowEmpty('Werk_ID', 'create');
 
         $validator
             ->requirePresence('Titel', 'create')
