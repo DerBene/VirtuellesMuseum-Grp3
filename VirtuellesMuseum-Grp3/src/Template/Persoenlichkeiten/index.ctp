@@ -12,15 +12,13 @@
 				<h4><?= h($persoenlichkeiten->Name) ?></h4>
 				<h5><?= h($persoenlichkeiten->Zitat) ?></h5>
 				<p><?= h($persoenlichkeiten->Kurzbeschreibung) ?></p>
-				<?php if ($login == true): ?>
 					<td class="actions">
 						<?= $this->Html->link(__('View'), ['action' => 'view', $persoenlichkeiten->Pers_ID]) ?>
+						<?php if ($login == true): ?>
 						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $persoenlichkeiten->Pers_ID]) ?>
 						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $persoenlichkeiten->Pers_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $persoenlichkeiten->Pers_ID)]) ?>
-					</td>
-				<?php else: ?>
-				
-				<?php endif; ?>		
+					    <?php endif; ?>
+                    </td>	
 		</div>
 		<?php
 		$i++;

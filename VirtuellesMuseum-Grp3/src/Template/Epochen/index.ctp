@@ -10,15 +10,14 @@
 		<div class="col-md-4 b1">
 				<h4><?= h($epochen->name) ?></h4>
 				<h5><?= h($epochen->Start) ?> - <?= h($epochen->Ende) ?></h5>
-				<?php if ($login == true): ?>
+				
 					<td class="actions">
 						<?= $this->Html->link(__('View'), ['action' => 'view', $epochen->E_ID]) ?>
+						<?php if ($login == true): ?>
 						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $epochen->E_ID]) ?>
 						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $epochen->E_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $epochen->E_ID)]) ?>
-					</td>
-				<?php else: ?>
-				
-				<?php endif; ?>
+				        <?php endif; ?>
+                    </td>
 		</div>
 		
 		<?php

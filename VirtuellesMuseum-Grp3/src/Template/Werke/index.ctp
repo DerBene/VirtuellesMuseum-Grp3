@@ -11,15 +11,13 @@
 				<h4><a><?= h($werke->Titel) ?></a></h4>
 				<h5><?= h($werke->Urheber) ?></h5>
 				<p><?= h($werke->Erscheinungsdatum) ?></p>
-				<?php if ($login == true): ?>
 					<td class="actions">
 						<?= $this->Html->link(__('View'), ['action' => 'view', $werke->Werk_ID]) ?>
+						<?php if ($login == true): ?>
 						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $werke->Werk_ID]) ?>
 						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $werke->Werk_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $werke->Werk_ID)]) ?>
-					</td>
-				<?php else: ?>
-				
-				<?php endif; ?>
+				        <?php endif; ?>
+                	</td>
 		</div>
 		
 		<?php

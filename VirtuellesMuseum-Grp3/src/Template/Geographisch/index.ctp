@@ -10,15 +10,13 @@
 		<div class="col-md-4 b1">
 				<h4><?= h($geographisch->Ort) ?>, <?= h($geographisch->Land) ?></h4>
 				<h5><?= h($geographisch->Beschreibung) ?></h5>
-				<?php if ($login == true): ?>
 					<td class="actions">
 						<?= $this->Html->link(__('View'), ['action' => 'view', $geographisch->Graph_ID]) ?>
+						<?php if ($login == true): ?>
 						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $geographisch->Graph_ID]) ?>
 						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $geographisch->Graph_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $geographisch->Graph_ID)]) ?>
-					</td>
-				<?php else: ?>
-				
-				<?php endif; ?>
+					    <?php endif; ?>
+                    </td>
 		</div>
 		
 		<?php

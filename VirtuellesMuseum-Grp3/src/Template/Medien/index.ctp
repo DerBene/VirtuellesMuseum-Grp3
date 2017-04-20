@@ -11,15 +11,13 @@
 				<img class="img-responsive" src="<?= h($medien->Dateipfad) ?>">
 				<h5><?= h($medien->Urheber) ?></h5>
 				<p><?= h($medien->Erscheinungsdatum) ?></p>
-				<?php if ($login == true): ?>
 					<td class="actions">
 						<?= $this->Html->link(__('View'), ['action' => 'view', $medien->Med_ID]) ?>
+						<?php if ($login == true): ?>
 						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $medien->Med_ID]) ?>
 						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $medien->Med_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $medien->Med_ID)]) ?>
-					</td>
-				<?php else: ?>
-				
-				<?php endif; ?>
+					    <?php endif; ?>
+                    </td>
 		</div>
 		
 		<?php
