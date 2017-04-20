@@ -10,23 +10,11 @@
     </ul>
 </nav>
 <div class="geographisch view large-9 medium-8 columns content">
-    <h3><?= h($geographisch->Graph_ID) ?></h3>
+    <h3><?= h($geographisch->Ort) ?>, <?= h($geographisch->Land) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Beschreibung') ?></th>
             <td><?= h($geographisch->Beschreibung) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Ort') ?></th>
-            <td><?= h($geographisch->Ort) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Land') ?></th>
-            <td><?= h($geographisch->Land) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Graph ID') ?></th>
-            <td><?= $this->Number->format($geographisch->Graph_ID) ?></td>
         </tr>
     </table>
 </div>

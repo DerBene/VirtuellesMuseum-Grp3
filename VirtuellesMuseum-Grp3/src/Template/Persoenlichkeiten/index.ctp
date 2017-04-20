@@ -2,44 +2,16 @@
 /**
   * @var \App\View\AppView $this
   */
+  $i = 0;
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><a href="PersoenlichkeitenHasEpochen">Abh&auml;ngigkeiten zu Epochen anzeigen</a></li>
-        <li><a href="PersoenlichkeitenHasKategorien">Abh&auml;ngigkeiten zu Kategorien anzeigen</a></li>
-    </ul>
-</nav>
-<div class="persoenlichkeiten index large-9 medium-8 columns content">
-    <h3><?= __('Persoenlichkeiten') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('Pers_ID') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Kurzbeschreibung') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Zitat') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('LangerText') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('BiografischeDaten') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Freischaltung') ?></th>
-                <?php if ($login == true): ?>
-				<th scope="col" class="actions"><?= __('Actions') ?></th>
-				<?php else: ?>
-				
-				<?php endif; ?>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($persoenlichkeiten as $persoenlichkeiten): ?>
-            <tr>
-                <td><?= $this->Number->format($persoenlichkeiten->Pers_ID) ?></td>
-                <td><?= h($persoenlichkeiten->Name) ?></td>
-                <td><?= h($persoenlichkeiten->Kurzbeschreibung) ?></td>
-                <td><?= h($persoenlichkeiten->Zitat) ?></td>
-                <td><?= h($persoenlichkeiten->LangerText) ?></td>
-                <td><?= h($persoenlichkeiten->BiografischeDaten) ?></td>
-                <td><?= h($persoenlichkeiten->Freischaltung) ?></td>
-				
+<div class="kategorien index large-9 medium-8 columns content">
+	<div class="row team">
+		<?php foreach ($persoenlichkeiten as $persoenlichkeiten): ?>
+		<div class="col-md-4 b1">
+				<img class="img-responsive" src="<?=h($medien->first()->dateipfad)?>">
+				<h4><?= h($persoenlichkeiten->Name) ?></h4>
+				<h5><?= h($persoenlichkeiten->Zitat) ?></h5>
+				<p><?= h($persoenlichkeiten->Kurzbeschreibung) ?></p>
 				<?php if ($login == true): ?>
 					<td class="actions">
 						<?= $this->Html->link(__('View'), ['action' => 'view', $persoenlichkeiten->Pers_ID]) ?>
@@ -48,19 +20,14 @@
 					</td>
 				<?php else: ?>
 				
-				<?php endif; ?>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
+				<?php endif; ?>		
+		</div>
+		<?php
+		$i++;
+		if(($i % 3) == 0) : ?>
+	</div>
+	<div class="row team">
+		<?php  endif; endforeach; ?>
+	</div>
 </div>
+       

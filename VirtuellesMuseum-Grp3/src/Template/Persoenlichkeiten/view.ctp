@@ -1,4 +1,4 @@
-<?php
+	<?php
 /**
   * @var \App\View\AppView $this
   */
@@ -7,40 +7,18 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Persoenlichkeiten'), ['action' => 'index']) ?> </li>
-        <li><a href="PersoenlichkeitenHasEpochen">Abh&auml;ngigkeiten zu Epochen anzeigen</a></li>
-        <li><a href="PersoenlichkeitenHasKategorien">Abh&auml;ngigkeiten zu Kategorien anzeigen</a></li>
+        <li><a href="/VirtuellesMuseum-Grp3/PersoenlichkeitenHasEpochen">Abh&auml;ngigkeiten zu Epochen anzeigen</a></li>
+        <li><a href="/VirtuellesMuseum-Grp3/PersoenlichkeitenHasKategorien">Abh&auml;ngigkeiten zu Kategorien anzeigen</a></li>
     </ul>
 </nav>
 <div class="persoenlichkeiten view large-9 medium-8 columns content">
-    <h3><?= h($persoenlichkeiten->Pers_ID) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Name') ?></th>
-            <td><?= h($persoenlichkeiten->Name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Kurzbeschreibung') ?></th>
-            <td><?= h($persoenlichkeiten->Kurzbeschreibung) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Zitat') ?></th>
-            <td><?= h($persoenlichkeiten->Zitat) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('LangerText') ?></th>
-            <td><?= h($persoenlichkeiten->LangerText) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('BiografischeDaten') ?></th>
-            <td><?= h($persoenlichkeiten->BiografischeDaten) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Pers ID') ?></th>
-            <td><?= $this->Number->format($persoenlichkeiten->Pers_ID) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Freischaltung') ?></th>
-            <td><?= $persoenlichkeiten->Freischaltung ? __('Yes') : __('No'); ?></td>
-        </tr>
-    </table>
+			<div class="row team">
+				<img class="img-responsive" src="webroot/img/ruth_cohn/KB_Frontal_lachend.jpg">
+						<h4><?= h($persoenlichkeiten->Name) ?></h4>
+						<h5><?= h($persoenlichkeiten->Kurzbeschreibung) ?></h5>
+						<h5><?= h($persoenlichkeiten->Zitat) ?></h5>
+						<h5><?= h($persoenlichkeiten->LangerText) ?></h5>
+						<h5><?= h($persoenlichkeiten->BiografischeDaten) ?></h5>
+				
+			</div>
 </div>
