@@ -5,8 +5,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
-html,body
-{
+html,body {
     width: 100%;
     margin: 0px;
     padding: 0px;
@@ -39,7 +38,6 @@ div.bg {
 
 
 * {box-sizing:border-box}
-body {font-family: Verdana,sans-serif;margin:0}
 .mySlides {display:none}
 
 .mySlides:hover{
@@ -88,7 +86,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 }
 
 /* Caption text */
-.text {
+.textb {
   color: #121212;
   font-size: 15px;
   padding: 8px 12px;
@@ -143,7 +141,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+  .prev, .next, .text {font-size: 11px}
 }
 
 
@@ -331,7 +329,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 			          <div class="timeline-panel">
 			            <div class="timeline-heading">
 			              <h4 class="timeline-title">Altertum</h4>
-			              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>4500 v. Chr. - 500 n. Chr.</small></p>
+			              <p><small class="textb-muted"><i class="glyphicon glyphicon-time"></i>4500 v. Chr. - 500 n. Chr.</small></p>
 			            </div>
 			            <div class="timeline-body">
 			              <p>Am Anfang des Altertums steht die Ausbildung der Schrift und der altorientalischen Reiche Vorderasiens – Mesopotamien (Sumer, Akkad, Babylonien, Mittani, Assyrien), Iranisches Hochland (Elam, Medien, Persien), Levante (Ugarit) und Kleinasien/Anatolien (Hethiterreich, Phrygien, Lydien, Luwien) – sowie Ägyptens.
@@ -345,7 +343,7 @@ Das Altertum endet mit dem Zerfall des römischen und sassanidischen Staatengef�
 			          <div class="timeline-panel">
 			            <div class="timeline-heading">
 			              <h4 class="timeline-title">Mittelalter</h4>
-			              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>500 - 1500 n. Chr.</small></p>
+			              <p><small class="textb-muted"><i class="glyphicon glyphicon-time"></i>500 - 1500 n. Chr.</small></p>
 			            </div>
 			            <div class="timeline-body">
 			              <p>Mittelalter bezeichnet in der europäischen Geschichte die Epoche zwischen dem Ende der Antike und dem Beginn der Neuzeit, also ca. zwischen dem 6. und 15. Jahrhundert. Sowohl der Beginn als auch das Ende des Mittelalters sind Gegenstand der wissenschaftlichen Diskussion und werden recht unterschiedlich angesetzt.
@@ -367,7 +365,7 @@ Von großer Bedeutung für das christliche Europa waren die Juden. Auf Grund des
 			          <div class="timeline-panel">
 			            <div class="timeline-heading">
 			              <h4 class="timeline-title">Frühzeit</h4>
-			              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>1500 - 1700 n. Chr.</small></p>
+			              <p><small class="textb-muted"><i class="glyphicon glyphicon-time"></i>1500 - 1700 n. Chr.</small></p>
 			            </div>
 			            <div class="timeline-body">
 			              <p>Mit der Reformation kam es zu einem Niedergang des katholischen Bildungswesens in den 1520er Jahren. Danach verstärkten sowohl die katholische als auch die evangelischen Kirchen ihre pädagogischen Anstrengungen; so gründete der Jesuiten­orden ab 1540 in ganz Europa Schulen. Die protestantischen Schulen dienten vor allem auch der Verbreitung der dazugehörigen Ideologie, die später als protestantische Arbeitsethik bekannt wurde: Askese und Arbeit erscheinen als die Daseinsberechtigung und Voraussetzung für den Einzug ins Himmelreich; Rausch und Genuss werden dagegen abgelehnt. Dieser Ansatz wurde auch in der Sozialfürsorge angewendet. Waren Almosen bislang ein Teil christlicher Nächstenliebe, wurde nun von den Armen selbst ein Beitrag verlangt. Arbeitshäuser und andere Zwangseinrichtungen wurden zunehmend zu ihrer Bekämpfung eingerichtet.
@@ -380,7 +378,7 @@ Im Dreißigjährigen Krieg wurden große Teile Mitteleuropas entvölkert und das
 			          <div class="timeline-panel">
 			            <div class="timeline-heading">
 			              <h4 class="timeline-title">Nachzeit</h4>
-			              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>1700 - 1800 n. Chr.</small></p>
+			              <p><small class="textb-muted"><i class="glyphicon glyphicon-time"></i>1700 - 1800 n. Chr.</small></p>
 			            </div>
 			            <div class="timeline-body">
 			              <p>Währenddessen entwickelten sich in anderen Teilen Europas Wissenschaft und Technik rasant und damit kamen neue aufklärerische Bildungsideen auf. John Locke formulierte den Gedanken der tabula rasa, nach dem die Menschen bei Geburt wie ein leeres Blatt seien, das erst durch die Erziehung beschrieben würde. Damit formulierte er einen Grundgedanken der bürgerlichen Pädagogik, in welcher der Erziehung alles möglich erscheint – zugleich sind diejenigen, die von der Erziehung betroffen sind, ein Nichts. Diese Ideologie findet sich auch in dem Erziehungsroman Émile oder über die Erziehung von Jean-Jacques Rousseau; in Deutschland wurde sie unter anderem vom Philanthropen Christian Gotthilf Salzmann und in der Schweiz von Johann Heinrich Pestalozzi vertreten. Kindheit wurde damit erstmals in Europa als ein eigenständiger Lebensabschnitt wahrgenommen, zuvor wurden hier Kinder als „kleine Erwachsene“ betrachtet.
@@ -396,7 +394,7 @@ Mit der Aufklärung kamen auch Gedanken der Toleranz und Gleichberechtigung von 
 			          <div class="timeline-panel">
 			            <div class="timeline-heading">
 			              <h4 class="timeline-title">19. Jahrhundert</h4>
-			              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>1800 - 1900 n. Chr.</small></p>
+			              <p><small class="textb-muted"><i class="glyphicon glyphicon-time"></i>1800 - 1900 n. Chr.</small></p>
 			            </div>
 			            <div class="timeline-body">
 			              <p>Das lange 19. Jahrhundert umfasst am Anfang ein Zeitalter der Revolutionen, das mit der Französischen Revolution 1789 beginnt oder noch früher unter Einbezug des nordamerikanischen Aufstandes. Dieses Zeitalter der Revolutionen endet dann mit der Niederlage Napoleons 1815, oder später. Am Ende des Jahrhunderts beginnt ein Zeitalter des Imperialismus oder Hochimperalismus, womit die Zeit bis zum Ersten Weltkrieg überbrückt wird; oder aber man lässt das Zeitalter und damit das lange 19. Jahrhundert mit dem Epochenjahr 1917 oder dem Kriegsende 1918 oder erst nach den Friedensschlüssen (1919/1920 oder gar später) enden.</p>
@@ -408,7 +406,7 @@ Mit der Aufklärung kamen auch Gedanken der Toleranz und Gleichberechtigung von 
 			          <div class="timeline-panel">
 			            <div class="timeline-heading">
 			              <h4 class="timeline-title">20. Jahrhundert</h4>
-			              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>1900 - 2000 n. Chr.</small></p>
+			              <p><small class="textb-muted"><i class="glyphicon glyphicon-time"></i>1900 - 2000 n. Chr.</small></p>
 			            </div>
 			            <div class="timeline-body">
 			              <p>Das 20. Jahrhundert begann am 1. Januar 1901 und endete mit dem 31. Dezember 2000. Um Zentenniumsfeier und das Jubiläum zum 30. Reichsgründungstag am 18. Januar 1901 nicht miteinander in Konkurrenz geraten zu lassen, erließ Kaiser Wilhelm II. abweichend für Deutschland ein Dekret, welches den Beginn des neuen Jahrhunderts auf den 1. Januar 1900 festlegte. Das 20. Jahrhundert zählt zur Epoche der Neuzeit und war besonders durch den Imperialismus und die beiden Weltkriege sowie den daraus erwachsenden Niedergang der europäischen Kolonialreiche und den Kalten Krieg geprägt, ebenso von der exponentiellen Zunahme der Weltbevölkerung, der Automatisierung und der Digitalisierung von Wirtschaftsprozessen sowie der Polarisierung zwischen der Ersten und der Dritten Welt. Wichtige Technologien wie Kunststoffe, Elektronik, Raumfahrt und Antibiotika veränderten die Welt.</p>
@@ -420,7 +418,7 @@ Mit der Aufklärung kamen auch Gedanken der Toleranz und Gleichberechtigung von 
 			          <div class="timeline-panel">
 			            <div class="timeline-heading">
 			              <h4 class="timeline-title">21. Jahrhundert</h4>
-			              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>2000 - 2100 n. Chr.</small></p>
+			              <p><small class="textb-muted"><i class="glyphicon glyphicon-time"></i>2000 - 2100 n. Chr.</small></p>
 			            </div>
 			            <div class="timeline-body">
 			              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
