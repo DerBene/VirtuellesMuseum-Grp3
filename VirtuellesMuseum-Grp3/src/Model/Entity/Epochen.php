@@ -7,6 +7,7 @@ use Cake\ORM\Entity;
  * Epochen Entity
  *
  * @property int $E_ID
+ * @property string $name
  * @property string $Start
  * @property string $Ende
  */

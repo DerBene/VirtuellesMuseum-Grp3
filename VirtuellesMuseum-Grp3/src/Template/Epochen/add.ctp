@@ -14,6 +14,7 @@
     <fieldset>
         <legend><?= __('Add Epochen') ?></legend>
         <?php
+            echo $this->Form->control('name');
             echo $this->Form->control('Start');
             echo $this->Form->control('Ende');
         ?>

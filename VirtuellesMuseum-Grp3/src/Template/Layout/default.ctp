@@ -65,7 +65,7 @@ $cakeDescription = 'Virtuelles Museum';
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
-    <footer style="background-color: #308e97;">
+    <footer style="background-color: #308e97; padding-top: 10px; padding-bottom: 10px;">
         <center><a style="color: #FFFFFF;" href="/VirtuellesMuseum-Grp3/Search/impressum">Impressum</a></center>
     </footer>
 </body>

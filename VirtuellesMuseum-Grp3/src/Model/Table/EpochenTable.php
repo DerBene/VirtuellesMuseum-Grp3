@@ -48,6 +48,10 @@ class EpochenTable extends Table
             ->allowEmpty('E_ID', 'create');
 
         $validator
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
+
+        $validator
             ->allowEmpty('Start');
 
         $validator
