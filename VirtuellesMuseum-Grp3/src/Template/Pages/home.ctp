@@ -45,14 +45,14 @@ div.bg {
 }
 
 /* Slideshow container */
-.slideshow-container {
+.slideshow {
   max-width: 1000px;
   width: 60vw;
   position: relative;
   margin: auto;
 }
 
-.slideshow-container:hover {
+.slideshow:hover {
   box-shadow: 0px 0px 30px #101010;
 }
 
@@ -288,7 +288,7 @@ div.bg {
 
 
 	<div class="bg">
-			<div class="slideshow-container">
+			<div class="slideshow">
 				
 				<div class="mySlides fade" onclick="window.location='http://it17-dmuseum3.dhbw-stuttgart.de/VirtuellesMuseum-Grp3/Persoenlichkeiten/Ruth_Cohn';">
 					<div class="numbertext">1/3</div>
@@ -297,12 +297,12 @@ div.bg {
 				
 				<div class="mySlides fade" onclick="window.location='http://it17-dmuseum3.dhbw-stuttgart.de/VirtuellesMuseum-Grp3/Persoenlichkeiten/Michael_Winkler';">
 					<div class="numbertext">2/3</div>
-					<img src="webroot/img/michael_winkler/Michael_Winkler_Plakat.png" style="width:100%">
+					<img src="webroot/img/michael_winkler/Winkler.png" style="width:100%">
 				</div>
 				
 				<div class="mySlides fade" onclick="window.location='http://it17-dmuseum3.dhbw-stuttgart.de/VirtuellesMuseum-Grp3/Persoenlichkeiten/Maria_Montessori';">
 					<div class="numbertext">3/3</div>
-					<img src="webroot/img/maria_montessori/Maria_Montessori_Plakat.png" style="width:100%">
+					<img src="webroot/img/maria_montessori/Montessori.png" style="width:100%">
 				</div>
 				
 				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -319,7 +319,6 @@ div.bg {
 		</div>
 			
 		<div class="zeitstrahl">
-			<div class="container">
 			    <div class="page-header">
 			        <h1 id="Epochen"><center>Epochen</center></h1>
 			    </div>
@@ -426,7 +425,6 @@ Mit der Aufklärung kamen auch Gedanken der Toleranz und Gleichberechtigung von 
 			          </div>
 			        </li>
 			    </ul>
-			</div>
 		</div>
 	
 	<script>
