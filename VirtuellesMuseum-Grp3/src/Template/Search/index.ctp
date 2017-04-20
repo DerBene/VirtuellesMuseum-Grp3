@@ -19,7 +19,7 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('E_ID') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Start') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Ende') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -28,7 +28,7 @@
         <tbody>
             <?php foreach ($epochen as $epochen): ?>
             <tr>
-                <td><?= $this->Number->format($epochen->E_ID) ?></td>
+                <td><?= h($epochen->name) ?></td>
                 <td><?= h($epochen->Start) ?></td>
                 <td><?= h($epochen->Ende) ?></td>
                 <td class="actions">
@@ -50,7 +50,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Kat_ID') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Unterkategorie') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Beschreibung') ?></th>
@@ -60,7 +59,6 @@
         <tbody>
             <?php foreach ($kategorien as $kategorien): ?>
             <tr>
-                <td><?= $this->Number->format($kategorien->Kat_ID) ?></td>
                 <td><?= h($kategorien->Name) ?></td>
                 <td><?= h($kategorien->Unterkategorie) ?></td>
                 <td><?= h($kategorien->Beschreibung) ?></td>
@@ -83,26 +81,20 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Pers_ID') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Kurzbeschreibung') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Zitat') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('LangerText') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('BiografischeDaten') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Freischaltung') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($persoenlichkeiten as $persoenlichkeiten): ?>
             <tr>
-                <td><?= $this->Number->format($persoenlichkeiten->Pers_ID) ?></td>
                 <td><?= h($persoenlichkeiten->Name) ?></td>
                 <td><?= h($persoenlichkeiten->Kurzbeschreibung) ?></td>
                 <td><?= h($persoenlichkeiten->Zitat) ?></td>
-                <td><?= h($persoenlichkeiten->LangerText) ?></td>
                 <td><?= h($persoenlichkeiten->BiografischeDaten) ?></td>
-                <td><?= h($persoenlichkeiten->Freischaltung) ?></td>
                 <td class="actions">
                     <a href="/VirtuellesMuseum-Grp3/Persoenlichkeiten/view/<?php echo $persoenlichkeiten->Pers_ID; ?>">View</a>
                 </td>
@@ -122,7 +114,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Graph_ID') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Beschreibung') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Ort') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Land') ?></th>
@@ -132,7 +123,6 @@
         <tbody>
             <?php foreach ($geographisch as $geographisch): ?>
             <tr>
-                <td><?= $this->Number->format($geographisch->Graph_ID) ?></td>
                 <td><?= h($geographisch->Beschreibung) ?></td>
                 <td><?= h($geographisch->Ort) ?></td>
                 <td><?= h($geographisch->Land) ?></td>
@@ -155,26 +145,20 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Med_ID') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Typ') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Dateipfad') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Urheber') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Erscheinungsdatum') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Freischaltung') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Persoenlichkeiten_Pers_ID') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($medien as $medien): ?>
             <tr>
-                <td><?= $this->Number->format($medien->Med_ID) ?></td>
                 <td><?= h($medien->Typ) ?></td>
-                <td><?= h($medien->Dateipfad) ?></td>
+                <td><img class="img-responsive" src="<?= h($medien->Dateipfad) ?>" /></td>
                 <td><?= h($medien->Urheber) ?></td>
                 <td><?= h($medien->Erscheinungsdatum) ?></td>
-                <td><?= h($medien->Freischaltung) ?></td>
-                <td><?= $this->Number->format($medien->Persoenlichkeiten_Pers_ID) ?></td>
                 <td class="actions">
                     <a href="/VirtuellesMuseum-Grp3/Medien/view/<?php echo $medien->Med_ID; ?>">View</a>
                 </td>
@@ -194,28 +178,22 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Werk_ID') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Titel') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Typ') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Dateipfad') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Urheber') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Erscheinungsdatum') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Freischaltung') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Geographisch_Graph_ID') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Erscheinungsdatum') ?></th>               
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($werke as $werke): ?>
             <tr>
-                <td><?= $this->Number->format($werke->Werk_ID) ?></td>
                 <td><?= h($werke->Titel) ?></td>
                 <td><?= h($werke->Typ) ?></td>
                 <td><?= h($werke->Dateipfad) ?></td>
                 <td><?= h($werke->Urheber) ?></td>
                 <td><?= h($werke->Erscheinungsdatum) ?></td>
-                <td><?= h($werke->Freischaltung) ?></td>
-                <td><?= $this->Number->format($werke->Geographisch_Graph_ID) ?></td>
                 <td class="actions">
                     <a href="/VirtuellesMuseum-Grp3/Werke/view/<?php echo $werke->Werk_ID; ?>">View</a>
                 </td>
