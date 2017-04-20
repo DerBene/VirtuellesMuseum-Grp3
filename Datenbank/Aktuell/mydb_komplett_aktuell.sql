@@ -3,10 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 20. Apr 2017 um 16:56
+-- Erstellungszeit: 20. Apr 2017 um 17:03
 -- Server-Version: 10.1.21-MariaDB
 -- PHP-Version: 7.1.1
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -151,13 +152,13 @@ CREATE TABLE `medien` (
 
 INSERT INTO `medien` (`Med_ID`, `Typ`, `Dateipfad`, `Urheber`, `Erscheinungsdatum`, `Freischaltung`, `Persoenlichkeiten_Pers_ID`) VALUES
 (1, 'Bild, jpg', 'img\\ruth_cohn\\cohn_kb_26_18x24.jpg', 'Walter Schels', '08.04.2010', 1, 1),
-(2, 'Bild, jpg', '\\img\\ruth_cohn\\KB_Frontal_lachend.jpg', '/', '/', 1, 1),
-(3, 'Bild, png', '\\img\\ruth_cohn\\Ruth_Cohn_Plakat.png', '/', '/', 1, 1),
-(4, 'Bild, jpg', '\\img\\michael_winkler\\IMG_3026.JPG', '/', '30.05.2008', 1, 2),
-(5, 'Bild, png', '\\img\\michael_winkler\\Winkler.png', '/', '/', 1, 2),
-(6, 'Bild, png', '\\img\\maria_montessori\\Montessori.png', '/', '/', 1, 3),
-(7, 'Bild, jpg', '\\img\\bertha_von_pappenheim\\Pappenheim1.jpg', '/', '/', 1, 4),
-(8, 'Bild, jpg', '\\img\\bertha_von_pappenheim\\Pappenheim3.jpg', '/', '/', 1, 4);
+(2, 'Bild, jpg', 'img\\ruth_cohn\\KB_Frontal_lachend.jpg', 'Walter Schels', '', 1, 1),
+(3, 'Bild, png', 'img\\ruth_cohn\\Ruth_Cohn_Plakat.png', 'Walter Schels', '', 1, 1),
+(4, 'Bild, jpg', 'img\\michael_winkler\\IMG_3026.JPG', 'Walter Schels', '30.05.2008', 1, 2),
+(5, 'Bild, png', 'img\\michael_winkler\\Winkler.png', 'Walter Schels', '', 1, 2),
+(6, 'Bild, png', 'img\\maria_montessori\\Montessori.png', 'Walter Schels', '', 1, 3),
+(7, 'Bild, jpg', 'img\\bertha_von_pappenheim\\Pappenheim1.jpg', 'Walter Schels', '', 1, 4),
+(8, 'Bild, jpg', 'img\\bertha_von_pappenheim\\Pappenheim3.jpg', 'Walter Schels', '', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -482,6 +483,7 @@ ALTER TABLE `werke`
 ALTER TABLE `werke_has_persoenlichkeiten`
   ADD CONSTRAINT `fk_Werke_has_Persönlichkeiten_Persönlichkeiten1` FOREIGN KEY (`Persoenlichkeiten_Pers_ID`) REFERENCES `persoenlichkeiten` (`Pers_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Werke_has_Persönlichkeiten_Werke1` FOREIGN KEY (`Werke_Werk_ID`) REFERENCES `werke` (`Werk_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
