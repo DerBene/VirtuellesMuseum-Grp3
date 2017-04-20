@@ -18,11 +18,11 @@ class SearchController extends AppController
      */
     public function index()
     {        
-        $searchvalue = $this->request->getData();
+        $searchvalue = $this->request->getData();  //eingebebene Suche wird in eine Variable gelegt
         $this->set(compact('searchvalue'));
-        $this->set('_serialize', ['searchvalue']);
+        $this->set('_serialize', ['searchvalue']);  //global verfügbar machen für andere funktionen und des Templates
         
-        if(empty($searchvalue['Search']['searchvalue']))
+        if(empty($searchvalue['Search']['searchvalue']))  //suche ohne eingabe soll auf falsch laufen
         {
             $suche = false;
         }
@@ -53,20 +53,20 @@ class SearchController extends AppController
         //platzhalter
     }
     
-    public function search($searchvalue)
+    public function search($searchvalue)  //Suchfunktion durch die Datenbank
     {
         $this->paginate = array(
             'Epochen' => array(
-                'conditions' => array('Epochen.name' => $searchvalue['Search']['searchvalue']),
+                'conditions' => array('Epochen.name' => $searchvalue['Search']['searchvalue']),  //Rest für "SELECT FROM epochen WHERE Epochen.name = Suche"
                 'fields'=>array('E_ID','name','Start','Ende'),
                 'paramType' => 'querystring'
         ));
-        $epochen = $this->paginate('Epochen');
+        $epochen = $this->paginate('Epochen');  //global für Template zur Darstellung
         $this->set('epochen',$epochen);
         
         $this->paginate = array(
             'Kategorien' => array(
-                'conditions' => array('Kategorien.Name' => $searchvalue['Search']['searchvalue']),
+                'conditions' => array('Kategorien.Name' => $searchvalue['Search']['searchvalue']),  //Wiederholung oben
                 'fields'=>array('Kat_ID','Name','Unterkategorie','Beschreibung'),
                 'paramType' => 'querystring'
         ));

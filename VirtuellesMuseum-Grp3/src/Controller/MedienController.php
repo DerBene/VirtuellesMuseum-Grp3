@@ -41,7 +41,7 @@ class MedienController extends AppController
      * @return \Cake\Network\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
+    public function view($id = null)   //vom Framework zur Verfügung gestellt
     {
         $medien = $this->Medien->get($id, [
             'contain' => []
@@ -56,7 +56,7 @@ class MedienController extends AppController
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add()   //vom Framework zur Verfügung gestellt
     {
         $medien = $this->Medien->newEntity();
         if ($this->request->is('post')) {
@@ -79,7 +79,7 @@ class MedienController extends AppController
      * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function edit($id = null)   //vom Framework zur Verfügung gestellt
     {
         $medien = $this->Medien->get($id, [
             'contain' => []
@@ -104,7 +104,7 @@ class MedienController extends AppController
      * @return \Cake\Network\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
+    public function delete($id = null)   //vom Framework zur Verfügung gestellt
     {
         $this->request->allowMethod(['post', 'delete']);
         $medien = $this->Medien->get($id);

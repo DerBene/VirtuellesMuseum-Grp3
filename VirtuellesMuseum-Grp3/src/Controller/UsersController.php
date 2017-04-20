@@ -26,7 +26,7 @@ class UsersController extends AppController
         $this->Auth->deny(['index']);
     }
 
-    public function login()
+    public function login()   //Login seite mit Identifizierung
     {
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
@@ -43,22 +43,22 @@ class UsersController extends AppController
         return $this->redirect($this->Auth->logout());
     }
 
-     public function index()
+     public function index()   // Alle User anzeigen
      {
         $this->set('users', $this->Users->find('all'));
     }
 
-    public function view($id)
+    public function view($id)   //vom Framework zur Verfügung gestellt
     {
         $user = $this->Users->get($id);
         $this->set(compact('user'));
     }
 
-    public function add()
+    public function add()  //vom Framework zur Verfügung gestellt
     {
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user = $this->Users->patchEntity($user, $this->request->getData());  //Rest
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
                 return $this->redirect(['action' => 'add']);
@@ -75,13 +75,13 @@ class UsersController extends AppController
      * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function edit($id = null)  //vom Framework zur Verfügung gestellt
     {
         $user = $this->Users->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user = $this->Users->patchEntity($user, $this->request->getData());  //Rest
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 

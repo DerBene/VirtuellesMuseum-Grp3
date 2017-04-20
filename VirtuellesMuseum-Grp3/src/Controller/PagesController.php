@@ -28,7 +28,7 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {                 
-      public function isAuthorized($user)
+      public function isAuthorized($user)  //Seitenübergreifend überprüft ob man berechtigt ist die Seite zu betreten
     {
         return parent::isAuthorized($user);
     }            

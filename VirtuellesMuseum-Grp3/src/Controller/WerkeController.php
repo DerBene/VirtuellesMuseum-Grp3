@@ -43,7 +43,7 @@ class WerkeController extends AppController
      */
     public function view($id = null)
     {
-        $werke = $this->Werke->get($id, [
+        $werke = $this->Werke->get($id, [  //Zeige Werk mit der Ausgesuchten Id an
             'contain' => []
         ]);
 
@@ -60,7 +60,7 @@ class WerkeController extends AppController
     {
         $werke = $this->Werke->newEntity();
         if ($this->request->is('post')) {
-            $werke = $this->Werke->patchEntity($werke, $this->request->getData());
+            $werke = $this->Werke->patchEntity($werke, $this->request->getData());  //Rest
             if ($this->Werke->save($werke)) {
                 $this->Flash->success(__('The werke has been saved.'));
 
@@ -85,7 +85,7 @@ class WerkeController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $werke = $this->Werke->patchEntity($werke, $this->request->getData());
+            $werke = $this->Werke->patchEntity($werke, $this->request->getData());  //Rest
             if ($this->Werke->save($werke)) {
                 $this->Flash->success(__('The werke has been saved.'));
 

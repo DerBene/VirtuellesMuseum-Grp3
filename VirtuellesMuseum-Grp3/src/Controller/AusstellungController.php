@@ -16,7 +16,7 @@ class AusstellungController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
+    public function index()         //rufe alle Freigeschalteten Objekte für die Ausstellung auf
     {
         $this->set(compact('ausstellung'));
         $this->set('_serialize', ['ausstellung']);
@@ -32,7 +32,7 @@ class AusstellungController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
 
-    public function ausstellung($searchvalue)
+    public function ausstellung($searchvalue)    //Funktion für select aus der datenbank der relevanten Objekte
     {
         $this->paginate = array(
             'Epochen' => array(
