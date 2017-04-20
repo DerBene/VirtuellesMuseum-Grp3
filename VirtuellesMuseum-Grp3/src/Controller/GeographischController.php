@@ -19,6 +19,16 @@ class GeographischController extends AppController
     public function index()
     {
         $geographisch = $this->paginate($this->Geographisch);
+		$loginvalue = $this->request->session()->read('Auth.User.username');
+
+		if(is_null($loginvalue))
+		{
+			$login = false;
+		}else{
+			$login = true;
+		}
+		$this->set(compact('login'));
+		$this->set('_serialize', ['login']);
 
         $this->set(compact('geographisch'));
         $this->set('_serialize', ['geographisch']);

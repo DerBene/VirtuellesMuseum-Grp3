@@ -27,6 +27,7 @@ $cakeDescription = 'Virtuelles Museum';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('bootstrap.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>

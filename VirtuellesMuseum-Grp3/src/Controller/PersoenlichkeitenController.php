@@ -18,6 +18,7 @@ class PersoenlichkeitenController extends AppController
      */
     public function index()
     {
+		
         $persoenlichkeiten = $this->paginate($this->Persoenlichkeiten);
 		$loginvalue = $this->request->session()->read('Auth.User.username');
 		
@@ -32,6 +33,15 @@ class PersoenlichkeitenController extends AppController
 
         $this->set(compact('persoenlichkeiten'));
         $this->set('_serialize', ['persoenlichkeiten']);
+		
+		$this->paginate = array(
+            'medien' => array(
+				'conditions' => array('medien.persoenlichkeiten_pers_id' => '1'),
+                'fields' => array('med_id','typ','dateipfad','urheber', 'erscheinungsdatum', 'freischaltung', 'persoenlichkeiten_pers_id'),
+                'paramtype' => 'querystring'
+        ));
+        $medien = $this->paginate('medien');
+        $this->set('medien',$medien);
     }
 
     /**
@@ -49,6 +59,15 @@ class PersoenlichkeitenController extends AppController
 
         $this->set('persoenlichkeiten', $persoenlichkeiten);
         $this->set('_serialize', ['persoenlichkeiten']);
+		
+		$this->paginate = array(
+            'Medien' => array(
+			'conditions' => array('Medien.Persoenlichkeiten_Pers_ID' => $this->Pers_ID),
+                'fields'=>array('Dateipfad'),
+                'paramType' => 'querystring'
+        ));
+        $medien = $this->paginate('Medien');
+        $this->set('medien',$medien);
     }
 
     /**
