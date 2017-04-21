@@ -33,10 +33,12 @@ class PersoenlichkeitenController extends AppController
 
         $this->set(compact('persoenlichkeiten'));
         $this->set('_serialize', ['persoenlichkeiten']);
+        
+        $this->set(compact('medien'));
+        $this->set('_serialize', ['medien']);
 		
 		$this->paginate = array(
             'medien' => array(
-				'conditions' => array('medien.persoenlichkeiten_pers_id' => '1'),
                 'fields' => array('med_id','typ','dateipfad','urheber', 'erscheinungsdatum', 'freischaltung', 'persoenlichkeiten_pers_id'),
                 'paramtype' => 'querystring'
         ));
