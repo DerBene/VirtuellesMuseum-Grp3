@@ -15,6 +15,7 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Start') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Ende') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -23,6 +24,7 @@
         <tbody>
             <?php foreach ($epochen as $epochen): ?>
             <tr>
+                <td><?= h($epochen->name) ?></td>
                 <td><?= h($epochen->Start) ?></td>
                 <td><?= h($epochen->Ende) ?></td>
                 <td class="actions">
@@ -78,7 +80,6 @@
                 <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Kurzbeschreibung') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Zitat') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('LangerText') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('BiografischeDaten') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -89,7 +90,6 @@
                 <td><?= h($persoenlichkeiten->Name) ?></td>
                 <td><?= h($persoenlichkeiten->Kurzbeschreibung) ?></td>
                 <td><?= h($persoenlichkeiten->Zitat) ?></td>
-                <td><?= h($persoenlichkeiten->LangerText) ?></td>
                 <td><?= h($persoenlichkeiten->BiografischeDaten) ?></td>
                 <td class="actions">
                     <a href="/VirtuellesMuseum-Grp3/Persoenlichkeiten/view/<?php echo $persoenlichkeiten->Pers_ID; ?>">View</a>
@@ -152,7 +152,7 @@
             <?php foreach ($medien as $medien): ?>
             <tr>
                 <td><?= h($medien->Typ) ?></td>
-                <td><?= h($medien->Dateipfad) ?></td>
+                <td><img class="img-responsive" src="<?= h($medien->Dateipfad) ?>" /></td>
                 <td><?= h($medien->Urheber) ?></td>
                 <td><?= h($medien->Erscheinungsdatum) ?></td>
                 <td class="actions">

@@ -18,7 +18,7 @@
 						<?= $this->Html->link(__('View'), ['action' => 'view', $p->Pers_ID]) ?>
 						<?php if ($login == true): ?>
 						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $p->Pers_ID]) ?>
-						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $p->Pers_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $persoenlichkeiten->Pers_ID)]) ?>
+						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $p->Pers_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $p->Pers_ID)]) ?>
 					    <?php endif; ?>
                     </td>
                  <?php break; endif; endforeach; ?>	
