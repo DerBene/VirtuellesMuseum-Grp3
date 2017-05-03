@@ -14,6 +14,7 @@ use Cake\ORM\Entity;
  * @property string $email
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
+ * @property int $emailverificated
  */
 class User extends Entity
 {
@@ -38,7 +39,8 @@ class User extends Entity
      * @var array
      */
     protected $_hidden = [
-        'password'
+        'password',
+		'passwordCheck'
     ];
     
      protected function _setPassword($password)
