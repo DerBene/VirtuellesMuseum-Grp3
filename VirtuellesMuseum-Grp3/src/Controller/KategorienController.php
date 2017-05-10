@@ -10,7 +10,6 @@ use App\Controller\AppController;
  */
 class KategorienController extends AppController
 {
-
     /**
      * Index method
      *
