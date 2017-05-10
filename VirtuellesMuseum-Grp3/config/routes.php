@@ -41,9 +41,28 @@ use Cake\Routing\Route\DashedRoute;
  * `:action` markers.
  *
  */
+ 
+/*Router::mapResources('persoenlichkeiten');
+Router::mapResources('epochen');
+Router::mapResources('kategorien');
+Router::mapResources('werke');
+Router::mapResources('users');
+Router::mapResources('geographisch');
+Router::mapResources('medien');
+*/
+Router::extensions(['json', 'xml']);
+ 
 Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/', function (RouteBuilder $routes) {
+
+    $routes->resources('persoenlichkeiten');
+    $routes->resources('epochen');
+    $routes->resources('kategorien');
+    $routes->resources('werke');
+    $routes->resources('users');
+    $routes->resources('geographisch');
+    $routes->resources('medien');
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file
