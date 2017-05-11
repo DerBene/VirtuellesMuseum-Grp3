@@ -12,7 +12,6 @@
 
 <div class="epochen index columns content">
 <?php if(sizeof($epochen) == 0): ?>
-    <h4>Keine Suchergebnisse in Epochen ...</h4>
     </div>
 <?php else: ?>
     <h3><?= __('Epochen') ?></h3>
@@ -43,7 +42,6 @@
 
 <div class="kategorien index columns content">
 <?php if(sizeof($kategorien) == 0): ?>
-    <h4>Keine Suchergebnisse in Kategorien ...</h4>
     </div>
 <?php else: ?>
     <h3><?= __('Kategorien') ?></h3>
@@ -74,7 +72,6 @@
 
 <div class="persoenlichkeiten index columns content">
 <?php if(sizeof($persoenlichkeiten) == 0): ?>
-    <h4>Keine Suchergebnisse in Pers&ouml;nlichkeiten ...</h4>
     </div>
 <?php else: ?>
     <h3><?= __('Persoenlichkeiten') ?></h3>
@@ -107,7 +104,6 @@
 
 <div class="geographisch index columns content">
 <?php if(sizeof($geographisch) == 0): ?>
-    <h4>Keine Suchergebnisse in Geographisch ...</h4>
     </div>
 <?php else: ?>
     <h3><?= __('Geographisch') ?></h3>
@@ -138,7 +134,6 @@
 
 <div class="medien index columns content">
 <?php if(sizeof($medien) == 0): ?>
-    <h4>Keine Suchergebnisse in Medien ...</h4>
     </div>
 <?php else: ?>
     <h3><?= __('Medien') ?></h3>
@@ -171,7 +166,6 @@
 
 <div class="werke index columns content">
 <?php if(sizeof($werke) == 0): ?>
-    <h4>Keine Suchergebnisse in Werke ...</h4>
     </div>
 <?php else: ?>
     <h3><?= __('Werke') ?></h3>

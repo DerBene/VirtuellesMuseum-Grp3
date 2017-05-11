@@ -27,46 +27,72 @@ $cakeDescription = 'Virtuelles Museum';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
-    <?= $this->Html->css('bootstrap.css') ?>
+    <?= $this->Html->css('bootstrap.min.css') ?>
+	
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <?= $this->Html->script('bootstrap.min.js'); ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href="/VirtuellesMuseum-Grp3">Home</a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section"> 
-            <ul>
-                <li><a href="/VirtuellesMuseum-Grp3/Ausstellung">Ausstellung</a></li>
-                <li><a href="/VirtuellesMuseum-Grp3/Kategorien">Kategorien</a></li>
-                <li><a href="/VirtuellesMuseum-Grp3/Epochen">Epochen</a></li>
-                <li><a href="/VirtuellesMuseum-Grp3/Geographisch">Geographisch</a></li>
-                <li><a href="/VirtuellesMuseum-Grp3/Persoenlichkeiten">Pers&ouml;nlichkeiten</a></li>
-                <li><a href="/VirtuellesMuseum-Grp3/Medien">Medien</a></li>
-                <li><a href="/VirtuellesMuseum-Grp3/Werke">Werke</a></li>
-            </ul> 
-            <ul class="right">
-                <li><a href="/VirtuellesMuseum-Grp3/Users">Admin</a></li>
-            </ul>
-            <ul class="right">
-                <?php echo $this->Form->create('Search', array('type' => 'post', 'url' => '/Search'));?>
-                <li><?php echo $this->Form->input('Search.searchvalue', array('label' => false, "placeholder" => __('Suche')));?></li>
-                <li><?php echo $this->Form->button(__('Suche'));?></li>
-                <?php echo $this->Form->end(); ?>
-            </ul>
-        </div>
-    </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
+
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" href="/VirtuellesMuseum-Grp3/">Home</a>
+  
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/VirtuellesMuseum-Grp3/Ausstellung">Ausstellung</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Weiteres
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="/VirtuellesMuseum-Grp3/Kategorien">Kategorien</a>
+					<a class="dropdown-item" href="/VirtuellesMuseum-Grp3/Epochen">Epochen</a>
+					<a class="dropdown-item" href="/VirtuellesMuseum-Grp3/Geographisch">Geographisch</a>
+					<a class="dropdown-item" href="/VirtuellesMuseum-Grp3/Persoenlichkeiten">Pers&ouml;nlichkeiten</a>
+					<a class="dropdown-item" href="/VirtuellesMuseum-Grp3/Medien">Medien</a>
+					<a class="dropdown-item" href="/VirtuellesMuseum-Grp3/Werke">Werke</a>
+				</ul>
+			</li>
+		</ul>
+		 <ul class="navbar-nav" style="margin-right: 10px">
+			<li class="nav-item pull-xs-right">
+			<?php 	$user = $this->request->session()->read();
+					if(!empty($user['Auth']['User'])){
+						$username = $user['Auth']['User']['username'];
+						if(!empty($username)){?>
+							<a class="nav-link" href="/VirtuellesMuseum-Grp3/Users"><?php echo $username?></a>
+							<?php
+						}
+					}else{?>
+							<a class="nav-link" href="/VirtuellesMuseum-Grp3/Users/login">Login</a>
+						<?php	
+					}
+					?>
+					</li>
+		 </ul>
+		<?php echo $this->Form->create('Search', array('type' => 'post', 'class' => 'form-inline my-2 my-lg-0',  'url' => '/Search'));?>
+        <?php echo $this->Form->input('Search.searchvalue', array('label' => false, 'class' => 'form-control mr-sm-2', "placeholder" => __('Suche')));?>
+        <?php echo $this->Form->button(__('Suche'), array('class' => 'btn btn-outline-success my-2 my-sm-0'));?>
+        <?php echo $this->Form->end(); ?>
+	</div>
+</nav>
+<?= $this->Flash->render() ?>
+    <div class="containerTEST clearfix">
         <?= $this->fetch('content') ?>
     </div>
-    <footer style="background-color: #308e97; padding-top: 10px; padding-bottom: 10px;">
-        <center><a style="color: #FFFFFF;" href="/VirtuellesMuseum-Grp3/Search/impressum">Impressum</a></center>
+    <hr>
+    <footer>
+        <center><a style="color: black;" href="/VirtuellesMuseum-Grp3/Search/impressum">Impressum</a></center>
     </footer>
 </body>
 </html>

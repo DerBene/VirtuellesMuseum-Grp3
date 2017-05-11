@@ -82,7 +82,7 @@ class UsersController extends AppController
                 $this->Flash->success(__('Ein Link zm Bestätigen der Email Adressen wurde an folgende Email Adresse versandt ' . $user->email));
                 return $this->redirect(['action' => 'add']);
             }
-            $this->Flash->error(__('Unable to add the user.'));
+            $this->Flash->error(__('Der Benutzer konnte nicht hinzugefügt werden.'));
         }
         $this->set('user', $user);
     }
@@ -99,11 +99,11 @@ class UsersController extends AppController
 			$user->emailverificated = true;
 			$user->resetkey = NULL;
 			if ($this->Users->save($user)) {
-				$this->Flash->success(__('The Email has been verified.'));
+				$this->Flash->success(__('Die Emailadresse wurde erfolgreich aktiviert.'));
 				return $this->redirect(['action' => 'index']);
 			}
 		}
-		$this->Flash->error(__('Du bist schon aktiviert'));		
+		$this->Flash->error(__('Ihr Account wurde bereits aktiviert'));		
 	}
 	
 	
@@ -116,7 +116,7 @@ class UsersController extends AppController
 		$email->subject('E-Mail Bestätigung - Virtuelles Museum');
 		$email->setEmailFormat('html');
 		$email->send('Hallo ' . $user->username. ',<br><br>' .
-		'Bitte klicken Sie auf den Link um ihre E-Mail Adresse zu verifizieren.<br><br>' . 
+		'Bitte klicken Sie auf den Link, um ihre E-Mail Adresse zu verifizieren.<br><br>' . 
 		'http://localhost/VirtuellesMuseum-Grp3/users/verify?id=' . $user->id . '&code=' . $user->resetkey.'<br><br>'.
 		'Mit freundlichen Grüßen,<br>'.
 		'Virtuelles Museum');
@@ -132,7 +132,7 @@ class UsersController extends AppController
 		$email->subject('Password Zurücksetzen - Virtuelles Museum');
 		$email->setEmailFormat('html');
 		$email->send('Hallo ' . $user->username. ',<br><br>' .
-		'Bitte klicken Sie auf den Link um ihre Passwort zurückzusetzen.<br><br>' . 
+		'Bitte klicken Sie auf den Link, um ihr Passwort zurückzusetzen.<br><br>' . 
 		'http://localhost/VirtuellesMuseum-Grp3/users/passwordreseter?id=' . $user->id . '&code=' . $user->resetkey.'<br><br>'.
 		'Mit freundlichen Grüßen,<br>'.
 		'Virtuelles Museum');

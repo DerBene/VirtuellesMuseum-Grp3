@@ -9,18 +9,23 @@
         <li><?= $this->Html->link(__('Alle Benutzer anzeigen'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
-<div class="users form large-9 medium-8 columns content">
     <?= $this->Form->create($user) ?>
-    <fieldset>
-        <legend><?= __('Add User') ?></legend>
-        <?php
-            echo $this->Form->control('username');
-            echo $this->Form->control('password');
-            echo $this->Form->control('email');
-            echo $this->Form->control('role', [
-            'options' => ['admin' => 'Admin', 'author' => 'Author']]);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Senden')) ?>
+	<div class="container">
+        <h3><?= __('Benutzer Daten eingeben') ?></h3>
+		<div class="form-group row">
+        <?php    echo $this->Form->control('username', array('templates' => ['inputContainer' => '<div class="col-xs-9">{{content}}</div>']
+		,'label' => false,'class' => 'form-control', "placeholder" => __('Benutzername')));?>
+		</div>
+		<div class="form-group row">
+        <?php    echo $this->Form->control('password', array('label' => false,'class' => 'form-control', "placeholder" => __('Passwort')));?>
+		</div>
+        <div class="form-group row">
+		<?php	echo $this->Form->control('email', array('label' => false,'class' => 'form-control', "placeholder" => __('Email')));?>
+        </div>
+		<div class="form-group row">    
+		<?php	echo $this->Form->control('role', array('label' => false,'class' => 'form-control', "placeholder" => __('Rolle'),
+            'options' => ['admin' => 'Admin', 'author' => 'Author']));?>
+        </div>
+    <?= $this->Form->button(__('Benutzer hinzufügen'), ['class' => 'btn btn-primary']) ?>
     <?= $this->Form->end() ?>
-</div>
+	</div>

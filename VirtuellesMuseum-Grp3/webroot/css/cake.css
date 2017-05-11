@@ -480,9 +480,15 @@ div.message.hidden {
 }
 
 /* Use 'one true layout' methods to get equal height columns */
-.container {
+.containerTEST {
     overflow: hidden;
     min-height: 92%; /* full height almost always */
+	padding-top: 3rem
+}
+
+.slide_img
+{
+	height: 38vw;
 }
 
 /* Force equal height by overflowing */

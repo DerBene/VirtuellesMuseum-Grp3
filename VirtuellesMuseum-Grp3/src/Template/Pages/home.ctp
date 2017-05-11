@@ -19,6 +19,7 @@ div.bg {
 	background-position: top center;
 	width:100vw;
 	padding: 5vw;
+	padding-top: -8rem;
 }
 
 .zeitstrahl{
@@ -286,38 +287,36 @@ div.bg {
 </head>
 <body>
 
+<div class="bg">
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <img class="slide_img" src="webroot/img/ruth_cohn/Ruth_Cohn_Plakat.png" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="slide_img" src="webroot/img/michael_winkler/Winkler.png" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="slide_img" src="webroot/img/maria_montessori/Montessori.png" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+</div>
 
-	<div class="bg">
-			<div class="slideshow">
-				
-				<div class="mySlides fade" onclick="window.location='http://it17-dmuseum3.dhbw-stuttgart.de/VirtuellesMuseum-Grp3/Persoenlichkeiten/Ruth_Cohn';">
-					<div class="numbertext">1/3</div>
-					<img src="webroot/img/ruth_cohn/Ruth_Cohn_Plakat.png" style="width:100%">
-				</div>
-				
-				<div class="mySlides fade" onclick="window.location='http://it17-dmuseum3.dhbw-stuttgart.de/VirtuellesMuseum-Grp3/Persoenlichkeiten/Michael_Winkler';">
-					<div class="numbertext">2/3</div>
-					<img src="webroot/img/michael_winkler/Winkler.png" style="width:100%">
-				</div>
-				
-				<div class="mySlides fade" onclick="window.location='http://it17-dmuseum3.dhbw-stuttgart.de/VirtuellesMuseum-Grp3/Persoenlichkeiten/Maria_Montessori';">
-					<div class="numbertext">3/3</div>
-					<img src="webroot/img/maria_montessori/Montessori.png" style="width:100%">
-				</div>
-				
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1)">&#10095;</a>
-				
-			</div>
-			<br>
-
-			<div style="text-align:center">
-				<span class="dot" onclick="currentSlide(1)"></span> 
-				<span class="dot" onclick="currentSlide(2)"></span> 
-				<span class="dot" onclick="currentSlide(3)"></span> 
-			</div>
-		</div>
-			
+		
 		<div class="zeitstrahl">
 			    <div class="page-header">
 			        <h1 id="Epochen"><center>Epochen</center></h1>
