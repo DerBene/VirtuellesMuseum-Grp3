@@ -20,6 +20,18 @@ class PersoenlichkeitenHasEpochenController extends AppController
     {
         $persoenlichkeitenHasEpochen = $this->paginate($this->PersoenlichkeitenHasEpochen);
 
+		$loginvalue = $this->request->session()->read('Auth.User.username');
+		
+		if(is_null($loginvalue))
+		{
+			$login = false;
+		}else{
+			$login = true;
+		}
+		$this->set(compact('login'));
+		$this->set('_serialize', ['login']);
+		
+		
         $this->set(compact('persoenlichkeitenHasEpochen'));
         $this->set('_serialize', ['persoenlichkeitenHasEpochen']);
     }

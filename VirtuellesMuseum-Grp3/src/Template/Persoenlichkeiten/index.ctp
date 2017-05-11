@@ -15,10 +15,10 @@
 				<h5><?= h($p->Zitat) ?></h5>
 				<p><?= h($p->Kurzbeschreibung) ?></p>
 					<td class="actions">
-						<?= $this->Html->link(__('View'), ['action' => 'view', $p->Pers_ID], ['class' => 'btn btn-secondary']) ?>
+						<?= $this->Html->link(__('Anzeigen'), ['action' => 'view', $p->Pers_ID], ['class' => 'btn btn-secondary']) ?>
 						<?php if ($login == true): ?>
-						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $p->Pers_ID], ['class' => 'btn btn-secondary']) ?>
-						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $p->Pers_ID], ['class' => 'btn btn-secondary'], ['confirm' => __('Are you sure you want to delete # {0}?', $p->Pers_ID)]) ?>
+						<?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $p->Pers_ID], ['class' => 'btn btn-secondary']) ?>
+						<?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $p->Pers_ID], ['class' => 'btn btn-secondary'], ['confirm' => __('Are you sure you want to delete # {0}?', $p->Pers_ID)]) ?>
 					    <?php endif; ?>
                     </td>
                  <?php break; endif; endforeach; ?>	

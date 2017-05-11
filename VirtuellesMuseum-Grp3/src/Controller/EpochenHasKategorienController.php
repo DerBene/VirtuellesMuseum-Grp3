@@ -20,6 +20,17 @@ class EpochenHasKategorienController extends AppController
     {
         $epochenHasKategorien = $this->paginate($this->EpochenHasKategorien);
 
+		$loginvalue = $this->request->session()->read('Auth.User.username');
+		
+		if(is_null($loginvalue))
+		{
+			$login = false;
+		}else{
+			$login = true;
+		}
+		$this->set(compact('login'));
+		$this->set('_serialize', ['login']);
+		
         $this->set(compact('epochenHasKategorien'));
         $this->set('_serialize', ['epochenHasKategorien']);
     }

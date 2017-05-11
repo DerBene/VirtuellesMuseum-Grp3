@@ -11,6 +11,6 @@
         <?= $this->Form->control('password') ?>
         <?= $this->Form->control('passwordCheck', array('type' => 'password')) ?>
     </fieldset>
-<?= $this->Form->button(__('Passwort Ändern')); ?>
+<?= $this->Form->button(__('Passwort ändern')); ?>
 <?= $this->Form->end() ?>
 </div>

@@ -12,10 +12,10 @@
 				<h2><?= h($medien->Urheber) ?></h2>
 				<p><?= h($medien->Erscheinungsdatum) ?></p>
 					<td class="actions">
-						<?= $this->Html->link(__('View Details'), ['action' => 'view', $medien->Med_ID], ['class' => 'btn btn-secondary']) ?>
+						<?= $this->Html->link(__('Anzeigen'), ['action' => 'view', $medien->Med_ID], ['class' => 'btn btn-secondary']) ?>
 						<?php if ($login == true): ?>
-						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $medien->Med_ID], ['class' => 'btn btn-secondary']) ?>
-						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $medien->Med_ID],['class' => 'btn btn-secondary'], ['confirm' => __('Are you sure you want to delete # {0}?', $medien->Med_ID)]) ?>
+						<?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $medien->Med_ID], ['class' => 'btn btn-secondary']) ?>
+						<?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $medien->Med_ID],['class' => 'btn btn-secondary'], ['confirm' => __('Are you sure you want to delete # {0}?', $medien->Med_ID)]) ?>
 					    <?php endif; ?>
                     </td>
 		</div>

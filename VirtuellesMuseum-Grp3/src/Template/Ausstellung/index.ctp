@@ -15,10 +15,10 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Start') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Ende') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Aktionen') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +28,7 @@
                 <td><?= h($epochen->Start) ?></td>
                 <td><?= h($epochen->Ende) ?></td>
                 <td class="actions">
-                    <a href="/VirtuellesMuseum-Grp3/Epochen/view/<?php echo $epochen->E_ID; ?>">View</a>
+                    <a href="/VirtuellesMuseum-Grp3/Epochen/view/<?php echo $epochen->E_ID; ?>">Anzeigen</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -49,7 +49,7 @@
                 <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Unterkategorie') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Beschreibung') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Aktionen') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -59,7 +59,7 @@
                 <td><?= h($kategorien->Unterkategorie) ?></td>
                 <td><?= h($kategorien->Beschreibung) ?></td>
                 <td class="actions">
-                    <a href="/VirtuellesMuseum-Grp3/Kategorien/view/<?php echo $kategorien->Kat_ID; ?>">View</a>
+                    <a href="/VirtuellesMuseum-Grp3/Kategorien/view/<?php echo $kategorien->Kat_ID; ?>">Anzeigen</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -81,7 +81,7 @@
                 <th scope="col"><?= $this->Paginator->sort('Kurzbeschreibung') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Zitat') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('BiografischeDaten') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Aktionen') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -92,7 +92,7 @@
                 <td><?= h($persoenlichkeiten->Zitat) ?></td>
                 <td><?= h($persoenlichkeiten->BiografischeDaten) ?></td>
                 <td class="actions">
-                    <a href="/VirtuellesMuseum-Grp3/Persoenlichkeiten/view/<?php echo $persoenlichkeiten->Pers_ID; ?>">View</a>
+                    <a href="/VirtuellesMuseum-Grp3/Persoenlichkeiten/view/<?php echo $persoenlichkeiten->Pers_ID; ?>">Anzeigen</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -113,7 +113,7 @@
                 <th scope="col"><?= $this->Paginator->sort('Beschreibung') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Ort') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Land') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Aktionen') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -123,7 +123,7 @@
                 <td><?= h($geographisch->Ort) ?></td>
                 <td><?= h($geographisch->Land) ?></td>
                 <td class="actions">
-                    <a href="/VirtuellesMuseum-Grp3/Geographisch/view/<?php echo $geographisch->Graph_ID; ?>">View</a>
+                    <a href="/VirtuellesMuseum-Grp3/Geographisch/view/<?php echo $geographisch->Graph_ID; ?>">Anzeigen</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -145,7 +145,7 @@
                 <th scope="col"><?= $this->Paginator->sort('Dateipfad') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Urheber') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Erscheinungsdatum') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Aktionen') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -156,7 +156,7 @@
                 <td><?= h($medien->Urheber) ?></td>
                 <td><?= h($medien->Erscheinungsdatum) ?></td>
                 <td class="actions">
-                    <a href="/VirtuellesMuseum-Grp3/Medien/view/<?php echo $medien->Med_ID; ?>">View</a>
+                    <a href="/VirtuellesMuseum-Grp3/Medien/view/<?php echo $medien->Med_ID; ?>">Anzeigen</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -179,7 +179,7 @@
                 <th scope="col"><?= $this->Paginator->sort('Dateipfad') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Urheber') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Erscheinungsdatum') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Aktionen') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -191,7 +191,7 @@
                 <td><?= h($werke->Urheber) ?></td>
                 <td><?= h($werke->Erscheinungsdatum) ?></td>
                 <td class="actions">
-                    <a href="/VirtuellesMuseum-Grp3/Werke/view/<?php echo $werke->Werk_ID; ?>">View</a>
+                    <a href="/VirtuellesMuseum-Grp3/Werke/view/<?php echo $werke->Werk_ID; ?>">Anzeigen</a>
                 </td>
             </tr>
             <?php endforeach; ?>

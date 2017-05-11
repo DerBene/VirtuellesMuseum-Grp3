@@ -12,10 +12,10 @@
 				<h5><?= h($kategorien->Unterkategorie) ?></h5>
 				<p><?= h($kategorien->Beschreibung) ?></p>
 					<td class="actions">
-						<?= $this->Html->link(__('View Details'), ['action' => 'View', $kategorien->Kat_ID], ['class' => 'btn btn-secondary']) ?>
+						<?= $this->Html->link(__('Anzeigen'), ['action' => 'View', $kategorien->Kat_ID], ['class' => 'btn btn-secondary']) ?>
 						<?php if ($login == true): ?>
-						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $kategorien->Kat_ID], ['class' => 'btn btn-secondary']) ?>
-						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $kategorien->Kat_ID],['class' => 'btn btn-secondary'], ['confirm' => __('Are you sure you want to delete # {0}?', $kategorien->Kat_ID)]) ?>
+						<?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $kategorien->Kat_ID], ['class' => 'btn btn-secondary']) ?>
+						<?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $kategorien->Kat_ID],['class' => 'btn btn-secondary'], ['confirm' => __('Are you sure you want to delete # {0}?', $kategorien->Kat_ID)]) ?>
 					    <?php endif; ?>
                     </td>
 		</div>

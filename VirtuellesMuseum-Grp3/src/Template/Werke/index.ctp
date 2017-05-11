@@ -12,10 +12,10 @@
 				<h5><?= h($werke->Urheber) ?></h5>
 				<p><?= h($werke->Erscheinungsdatum) ?></p>
 					<td class="actions">
-						<?= $this->Html->link(__('View'), ['action' => 'view', $werke->Werk_ID], ['class' => 'btn btn-secondary']) ?>
+						<?= $this->Html->link(__('Anzeigen'), ['action' => 'view', $werke->Werk_ID], ['class' => 'btn btn-secondary']) ?>
 						<?php if ($login == true): ?>
-						<?= $this->Html->link(__('Edit'), ['action' => 'edit', $werke->Werk_ID], ['class' => 'btn btn-secondary']) ?>
-						<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $werke->Werk_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $werke->Werk_ID), ['class' => 'btn btn-secondary']]) ?>
+						<?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $werke->Werk_ID], ['class' => 'btn btn-secondary']) ?>
+						<?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $werke->Werk_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $werke->Werk_ID), ['class' => 'btn btn-secondary']]) ?>
 				        <?php endif; ?>
                 	</td>
 		</div>

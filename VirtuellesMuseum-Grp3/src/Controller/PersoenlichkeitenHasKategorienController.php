@@ -20,6 +20,18 @@ class PersoenlichkeitenHasKategorienController extends AppController
     {
         $persoenlichkeitenHasKategorien = $this->paginate($this->PersoenlichkeitenHasKategorien);
 
+		$loginvalue = $this->request->session()->read('Auth.User.username');
+		
+		if(is_null($loginvalue))
+		{
+			$login = false;
+		}else{
+			$login = true;
+		}
+		$this->set(compact('login'));
+		$this->set('_serialize', ['login']);
+		
+		
         $this->set(compact('persoenlichkeitenHasKategorien'));
         $this->set('_serialize', ['persoenlichkeitenHasKategorien']);
     }
