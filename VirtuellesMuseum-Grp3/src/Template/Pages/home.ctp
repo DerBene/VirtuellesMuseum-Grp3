@@ -23,7 +23,7 @@ div.bg {
 }
 
 .zeitstrahl{
-	background-image: linear-gradient(white, black);
+	background-image: linear-gradient(white, #acb);
 	background-size:     cover;
     background-repeat:   no-repeat;
 	background-position: top center;
@@ -166,7 +166,7 @@ div.bg {
   position: absolute;
   content: " ";
   width: 3px;
-  background-color: #eeeeee;
+  background-color: #5cb85c;
   left: 50%;
   margin-left: -1.5px;
 }
@@ -234,12 +234,15 @@ div.bg {
   top: 16px;
   left: 50%;
   margin-left: -25px;
-  background-color: #999999;
+  background-color: black;
   z-index: 100;
-  border-top-right-radius: 50%;
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #5cb85c;
+  border-top-right-radius: 30%;
+  border-top-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  border-bottom-left-radius: 30%;
 }
 .timeline > li.timeline-inverted > .timeline-panel {
   float: right;
@@ -373,6 +376,7 @@ Im Dreißigjährigen Krieg wurden große Teile Mitteleuropas entvölkert und das
 			          </div>
 			        </li>
 			        <li class="timeline-inverted">
+					  <div class="timeline-badge"><i class="glyphicon glyphicon-credit-card"></i></div>
 			          <div class="timeline-panel">
 			            <div class="timeline-heading">
 			              <h4 class="timeline-title">Nachzeit</h4>

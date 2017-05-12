@@ -91,7 +91,6 @@ $cakeDescription = 'Virtuelles Museum';
     <div class="containerTEST clearfix">
         <?= $this->fetch('content') ?>
     </div>
-    <hr>
     <footer>
         <center><a style="color: black;" href="/VirtuellesMuseum-Grp3/Search/impressum">Impressum</a></center>
     </footer>
