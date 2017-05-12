@@ -29,7 +29,8 @@ $cakeDescription = 'Virtuelles Museum';
     <?= $this->Html->css('cake.css') ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
 	
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <?= $this->Html->script('jquery-3.2.1.min.js'); ?>
+	<!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <?= $this->Html->script('bootstrap.min.js'); ?>
 
