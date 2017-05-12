@@ -307,13 +307,13 @@ pre {
 }
 
 .checks .success:before {
-    content: "✓";
+    content: "?";
     color: green;
     margin-right: 9px;
 }
 
 .checks .problem:before {
-    content: "✘";
+    content: "?";
     color: red;
     margin-right: 9px;
 }
@@ -492,11 +492,7 @@ div.message.hidden {
 }
 
 /* Force equal height by overflowing */
-.content,
-#actions-sidebar {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
-}
+
 @media(max-width: 640px) {
     #actions-sidebar {
         padding-bottom: 2rem;

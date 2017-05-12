@@ -3,13 +3,6 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-		<?php if ($login == true): ?>
-        <li><?= $this->Html->link(__('Neue Abhängigkeit erstellen'), ['action' => 'add']) ?></li>
-		<?php endif; ?>
-    </ul>
-</nav>
 <div class="epochenHasKategorien index large-9 medium-8 columns content">
     <h3><?= __('Epochen Zugehörigkeit zu Kategorien') ?></h3>
     <table cellpadding="0" cellspacing="0">
@@ -17,9 +10,6 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('Epochen_E_ID') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Kategorien_Kat_ID') ?></th>
-				<?php if ($login == true): ?>
-                <th scope="col" class="actions"><?= __('Aktionen') ?></th>
-				<?php endif; ?>
             </tr>
         </thead>
         <tbody>
@@ -27,12 +17,6 @@
             <tr>
                 <td><?= $this->Number->format($epochenHasKategorien->Epochen_E_ID) ?></td>
                 <td><?= $this->Number->format($epochenHasKategorien->Kategorien_Kat_ID) ?></td>
-				<?php if ($login == true): ?>
-                <td class="actions">
-                    <?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $epochenHasKategorien->Epochen_E_ID]) ?>
-                    <?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $epochenHasKategorien->Epochen_E_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $epochenHasKategorien->Epochen_E_ID)]) ?>
-				</td>
-				<?php endif; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>

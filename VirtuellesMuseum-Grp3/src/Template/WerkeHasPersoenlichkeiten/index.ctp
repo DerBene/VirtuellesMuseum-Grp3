@@ -18,9 +18,6 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('Werke_Werk_ID') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Persoenlichkeiten_Pers_ID') ?></th>
-				<?php if ($login == true): ?>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-				<?php endif; ?>
             </tr>
         </thead>
         <tbody>
@@ -28,12 +25,6 @@
             <tr>
                 <td><?= $this->Number->format($werkeHasPersoenlichkeiten->Werke_Werk_ID) ?></td>
                 <td><?= $this->Number->format($werkeHasPersoenlichkeiten->Persoenlichkeiten_Pers_ID) ?></td>
-				<?php if ($login == true): ?>
-                <td class="actions">
-                    <?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $werkeHasPersoenlichkeiten->Werke_Werk_ID]) ?>
-                    <?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $werkeHasPersoenlichkeiten->Werke_Werk_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $werkeHasPersoenlichkeiten->Werke_Werk_ID)]) ?>
-                </td>
-				<?php endif; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>
