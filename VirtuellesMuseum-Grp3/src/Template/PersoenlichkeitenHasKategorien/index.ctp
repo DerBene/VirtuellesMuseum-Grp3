@@ -3,27 +3,26 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-		<?php if ($login == true): ?>
-        <li><?= $this->Html->link(__('Neue Abhängigkeit erstellen'), ['action' => 'add']) ?></li>
-		<?php endif; ?>
-    </ul>
-</nav>
 <div class="persoenlichkeitenHasKategorien index large-9 medium-8 columns content">
     <h3><?= __('Persoenlichkeiten Zugehörigkeit zu Kategorien') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Persoenlichkeiten_Pers_ID') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Kategorien_Kat_ID') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Persoenlichkeiten') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Kategorien') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($persoenlichkeitenHasKategorien as $persoenlichkeitenHasKategorien): ?>
             <tr>
-                <td><?= $this->Number->format($persoenlichkeitenHasKategorien->Persoenlichkeiten_Pers_ID) ?></td>
-                <td><?= $this->Number->format($persoenlichkeitenHasKategorien->Kategorien_Kat_ID) ?></td>
+                <?php foreach ($persoenlichkeiten as $p):
+                if($p->Pers_ID == $this->Number->format($persoenlichkeitenHasKategorien->Persoenlichkeiten_Pers_ID)): ?>
+                <td><?= h($p->Name) ?></td>
+                <?php endif; endforeach; ?>
+                <?php foreach ($kategorien as $k):
+                if($k->Kat_ID == $this->Number->format($persoenlichkeitenHasKategorien->Kategorien_Kat_ID)): ?>
+                <td><?= h($k->Name) ?></td>
+                <?php endif; endforeach; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>

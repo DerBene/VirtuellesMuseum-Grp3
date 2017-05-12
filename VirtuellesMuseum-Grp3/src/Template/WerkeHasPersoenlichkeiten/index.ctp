@@ -3,28 +3,26 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Aktionen') ?></li>
-		<?php if ($login == true): ?>
-        <li><?= $this->Html->link(__('Neue Abhängigkeit erstellen'), ['action' => 'add']) ?></li>
-		<?php endif; ?>
-    </ul>
-</nav>
 <div class="werkeHasPersoenlichkeiten index large-9 medium-8 columns content">
     <h3><?= __('Werke Zugehörigkeit zu Persoenlichkeiten') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Werke_Werk_ID') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Persoenlichkeiten_Pers_ID') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Werke') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Persoenlichkeiten') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($werkeHasPersoenlichkeiten as $werkeHasPersoenlichkeiten): ?>
             <tr>
-                <td><?= $this->Number->format($werkeHasPersoenlichkeiten->Werke_Werk_ID) ?></td>
-                <td><?= $this->Number->format($werkeHasPersoenlichkeiten->Persoenlichkeiten_Pers_ID) ?></td>
+                <?php foreach ($werke as $w):
+                if($w->Werk_ID == $this->Number->format($werkeHasPersoenlichkeiten->Werke_Werk_ID)): ?>
+                <td><?= h($w->Titel) ?></td>
+                <?php endif; endforeach; ?>
+                <?php foreach ($persoenlichkeiten as $p):
+                if($p->Pers_ID == $this->Number->format($werkeHasPersoenlichkeiten->Persoenlichkeiten_Pers_ID)): ?>
+                <td><?= h($p->Name) ?></td>
+                <?php endif; endforeach; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>

@@ -16,8 +16,14 @@
         <tbody>
             <?php foreach ($persoenlichkeitenHasEpochen as $persoenlichkeitenHasEpochen): ?>
             <tr>
-                <td><?= $this->Number->format($persoenlichkeitenHasEpochen->Persoenlichkeiten_Pers_ID) ?></td>
-                <td><?= $this->Number->format($persoenlichkeitenHasEpochen->Epochen_E_ID) ?></td>
+                <?php foreach ($persoenlichkeiten as $p):
+                if($p->Pers_ID == $this->Number->format($persoenlichkeitenHasEpochen->Persoenlichkeiten_Pers_ID)): ?>
+                <td><?= h($p->Name) ?></td>
+                <?php endif; endforeach; ?>
+                <?php foreach ($epochen as $e):
+                if($e->E_ID == $this->Number->format($persoenlichkeitenHasEpochen->Epochen_E_ID)): ?>
+                <td><?= h($e->name) ?></td>
+                <?php endif; endforeach; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>

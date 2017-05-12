@@ -34,5 +34,24 @@ class PersoenlichkeitenHasKategorienController extends AppController
 		
         $this->set(compact('persoenlichkeitenHasKategorien'));
         $this->set('_serialize', ['persoenlichkeitenHasKategorien']);
+        
+        
+        //raussuchen
+        
+        $this->paginate = array(
+            'Persoenlichkeiten' => array(
+                'fields'=>array('Pers_ID','Name'),
+                'paramType' => 'querystring'
+        ));
+        $persoenlichkeiten = $this->paginate('Persoenlichkeiten');
+        $this->set('persoenlichkeiten',$persoenlichkeiten);
+        
+        $this->paginate = array(
+            'Kategorien' => array(
+                'fields'=>array('Kat_ID','Name'),
+                'paramType' => 'querystring'
+        ));
+        $kategorien = $this->paginate('Kategorien');
+        $this->set('kategorien',$kategorien);
     }
 }

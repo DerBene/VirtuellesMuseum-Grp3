@@ -34,5 +34,23 @@ class PersoenlichkeitenHasEpochenController extends AppController
 		
         $this->set(compact('persoenlichkeitenHasEpochen'));
         $this->set('_serialize', ['persoenlichkeitenHasEpochen']);
+        
+        //raussuchen
+        
+        $this->paginate = array(
+            'Persoenlichkeiten' => array(
+                'fields'=>array('Pers_ID','Name'),
+                'paramType' => 'querystring'
+        ));
+        $persoenlichkeiten = $this->paginate('Persoenlichkeiten');
+        $this->set('persoenlichkeiten',$persoenlichkeiten);
+        
+        $this->paginate = array(
+            'Epochen' => array(
+                'fields'=>array('E_ID','name'),
+                'paramType' => 'querystring'
+        ));
+        $epochen = $this->paginate('Epochen');  //global für Template zur Darstellung
+        $this->set('epochen',$epochen);
     }
 }

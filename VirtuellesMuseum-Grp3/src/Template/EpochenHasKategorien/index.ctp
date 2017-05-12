@@ -8,15 +8,21 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Epochen_E_ID') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Kategorien_Kat_ID') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Epochen') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Kategorien') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($epochenHasKategorien as $epochenHasKategorien): ?>
             <tr>
-                <td><?= $this->Number->format($epochenHasKategorien->Epochen_E_ID) ?></td>
-                <td><?= $this->Number->format($epochenHasKategorien->Kategorien_Kat_ID) ?></td>
+                <?php foreach ($epochen as $e): 
+                if($e->E_ID == $this->Number->format($epochenHasKategorien->Epochen_E_ID)): ?>
+                <td><?= h($e->name) ?></td>
+                <?php endif; endforeach; ?>
+                <?php foreach ($kategorien as $k): 
+                if($k->Kat_ID == $this->Number->format($epochenHasKategorien->Kategorien_Kat_ID)): ?>
+                <td><?= h($k->Name) ?></td>
+                <?php endif; endforeach; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>
