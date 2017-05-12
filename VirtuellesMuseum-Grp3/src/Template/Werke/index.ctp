@@ -15,7 +15,7 @@
 						<?= $this->Html->link(__('Anzeigen'), ['action' => 'view', $werke->Werk_ID], ['class' => 'btn btn-secondary']) ?>
 						<?php if ($login == true): ?>
 						<?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $werke->Werk_ID], ['class' => 'btn btn-secondary']) ?>
-						<?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $werke->Werk_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $werke->Werk_ID), ['class' => 'btn btn-secondary']]) ?>
+						<?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $werke->Werk_ID], ['class' => 'btn btn-secondary'], ['confirm' => __('Are you sure you want to delete # {0}?', $werke->Werk_ID), ['class' => 'btn btn-secondary']]) ?>
 				        <?php endif; ?>
                 	</td>
 		</div>
