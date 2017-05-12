@@ -20,24 +20,12 @@
             <td><?= h($werke->Typ) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Dateipfad') ?></th>
-            <td><?= h($werke->Dateipfad) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Urheber') ?></th>
             <td><?= h($werke->Urheber) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Erscheinungsdatum') ?></th>
             <td><?= h($werke->Erscheinungsdatum) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Werk ID') ?></th>
-            <td><?= $this->Number->format($werke->Werk_ID) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Geographisch Graph ID') ?></th>
-            <td><?= $this->Number->format($werke->Geographisch_Graph_ID) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Freischaltung') ?></th>

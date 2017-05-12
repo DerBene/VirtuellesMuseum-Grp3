@@ -9,8 +9,15 @@
 		<?php foreach ($medien as $medien): ?>
 		<div class="col-md-4 b1">
 				<img  class="squared" alt="Photo" src="<?= h($medien->Dateipfad)?>" width="340" height="270">
-				<h2><?= h($medien->Urheber) ?></h2>
-				<p><?= h($medien->Erscheinungsdatum) ?></p>
+				<h2> Urheber: <?= h($medien->Urheber) ?></h2>
+				<p> Erscheinungsdatum: 
+				<?php if (empty($medien->Erscheinungsdatum)): ?>
+				nicht bekannt
+				<?php else: ?>
+				<?= h($medien->Erscheinungsdatum) ?>
+				<?php endif; ?>
+				</p>
+				
 					<td class="actions">
 						<?= $this->Html->link(__('Anzeigen'), ['action' => 'view', $medien->Med_ID], ['class' => 'btn btn-secondary']) ?>
 						<?php if ($login == true): ?>
