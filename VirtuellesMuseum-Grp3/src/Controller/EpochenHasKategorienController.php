@@ -36,23 +36,6 @@ class EpochenHasKategorienController extends AppController
     }
 
     /**
-     * View method
-     *
-     * @param string|null $id Epochen Has Kategorien id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null) //vom Framework zur Verfügung gestellt
-    {
-        $epochenHasKategorien = $this->EpochenHasKategorien->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('epochenHasKategorien', $epochenHasKategorien);
-        $this->set('_serialize', ['epochenHasKategorien']);
-    }
-
-    /**
      * Add method
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.

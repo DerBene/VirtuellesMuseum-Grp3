@@ -37,23 +37,6 @@ class PersoenlichkeitenHasKategorienController extends AppController
     }
 
     /**
-     * View method
-     *
-     * @param string|null $id Persoenlichkeiten Has Kategorien id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $persoenlichkeitenHasKategorien = $this->PersoenlichkeitenHasKategorien->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('persoenlichkeitenHasKategorien', $persoenlichkeitenHasKategorien);
-        $this->set('_serialize', ['persoenlichkeitenHasKategorien']);
-    }
-
-    /**
      * Add method
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.

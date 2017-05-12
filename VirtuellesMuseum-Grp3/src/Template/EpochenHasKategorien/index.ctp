@@ -29,7 +29,6 @@
                 <td><?= $this->Number->format($epochenHasKategorien->Kategorien_Kat_ID) ?></td>
 				<?php if ($login == true): ?>
                 <td class="actions">
-                    <?= $this->Html->link(__('Anzeigen'), ['action' => 'view', $epochenHasKategorien->Epochen_E_ID]) ?>
                     <?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $epochenHasKategorien->Epochen_E_ID]) ?>
                     <?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $epochenHasKategorien->Epochen_E_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $epochenHasKategorien->Epochen_E_ID)]) ?>
 				</td>

@@ -37,23 +37,6 @@ class PersoenlichkeitenHasEpochenController extends AppController
     }
 
     /**
-     * View method
-     *
-     * @param string|null $id Persoenlichkeiten Has Epochen id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $persoenlichkeitenHasEpochen = $this->PersoenlichkeitenHasEpochen->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('persoenlichkeitenHasEpochen', $persoenlichkeitenHasEpochen);
-        $this->set('_serialize', ['persoenlichkeitenHasEpochen']);
-    }
-
-    /**
      * Add method
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.

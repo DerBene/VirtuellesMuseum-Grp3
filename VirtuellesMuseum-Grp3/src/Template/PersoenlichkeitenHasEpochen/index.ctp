@@ -30,7 +30,6 @@
                 <td><?= $this->Number->format($persoenlichkeitenHasEpochen->Epochen_E_ID) ?></td>
 				<?php if ($login == true): ?>
                 <td class="actions">
-                    <?= $this->Html->link(__('Anzeigen'), ['action' => 'view', $persoenlichkeitenHasEpochen->Persoenlichkeiten_Pers_ID]) ?>
                     <?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $persoenlichkeitenHasEpochen->Persoenlichkeiten_Pers_ID]) ?>
                     <?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $persoenlichkeitenHasEpochen->Persoenlichkeiten_Pers_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $persoenlichkeitenHasEpochen->Persoenlichkeiten_Pers_ID)]) ?>
                 </td>

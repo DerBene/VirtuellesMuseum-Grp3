@@ -29,7 +29,6 @@
                 <td><?= $this->Number->format($persoenlichkeitenHasKategorien->Kategorien_Kat_ID) ?></td>
 				<?php if ($login == true): ?>
                 <td class="actions">
-                    <?= $this->Html->link(__('Anzeigen'), ['action' => 'view', $persoenlichkeitenHasKategorien->Persoenlichkeiten_Pers_ID]) ?>
                     <?= $this->Html->link(__('Bearbeiten'), ['action' => 'edit', $persoenlichkeitenHasKategorien->Persoenlichkeiten_Pers_ID]) ?>
                     <?= $this->Form->postLink(__('Löschen'), ['action' => 'delete', $persoenlichkeitenHasKategorien->Persoenlichkeiten_Pers_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $persoenlichkeitenHasKategorien->Persoenlichkeiten_Pers_ID)]) ?>
                 </td>

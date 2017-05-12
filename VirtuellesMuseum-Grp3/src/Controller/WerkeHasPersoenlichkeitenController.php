@@ -34,24 +34,7 @@ class WerkeHasPersoenlichkeitenController extends AppController
         $this->set(compact('werkeHasPersoenlichkeiten'));
         $this->set('_serialize', ['werkeHasPersoenlichkeiten']);
     }
-
-    /**
-     * View method
-     *
-     * @param string|null $id Werke Has Persoenlichkeiten id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $werkeHasPersoenlichkeiten = $this->WerkeHasPersoenlichkeiten->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('werkeHasPersoenlichkeiten', $werkeHasPersoenlichkeiten);
-        $this->set('_serialize', ['werkeHasPersoenlichkeiten']);
-    }
-
+    
     /**
      * Add method
      *
