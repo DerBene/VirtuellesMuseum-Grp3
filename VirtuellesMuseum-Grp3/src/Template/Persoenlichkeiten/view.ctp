@@ -12,7 +12,6 @@
 </nav>
 <div class="persoenlichkeiten view large-9 medium-8 columns content">
 			<div class="row team">
-				<img class="img-responsive" src="webroot/img/ruth_cohn/KB_Frontal_lachend.jpg">
 						<h4><?= h($persoenlichkeiten->Name) ?></h4>
 						<h5><?= h($persoenlichkeiten->Kurzbeschreibung) ?></h5>
 						<h5><?= h($persoenlichkeiten->Zitat) ?></h5>
